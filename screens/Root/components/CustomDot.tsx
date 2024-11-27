@@ -1,8 +1,9 @@
+import { FC, useCallback } from "react";
+import { StyleSheet, View } from "react-native";
+import { DotProps } from "react-native-onboarding-swiper";
+
 import { Spacing } from "@/shared/constants/Colors";
 import { useTheme } from "@/shared/contexts/Theme";
-import { FC, useCallback } from "react";
-import { View, StyleSheet } from "react-native";
-import { DotProps } from "react-native-onboarding-swiper";
 
 export const CustomDot: FC<DotProps> = ({ selected }) => {
   const theme = useTheme();

@@ -1,6 +1,8 @@
 import { StyleSheet } from "react-native";
-import { OnboardingSlide } from "./components/OnboardingSlide";
+
 import SafeAreaView from "@/shared/components/themed/SafeAreaView";
+
+import { OnboardingSlide } from "./components/OnboardingSlide";
 
 const OnboardingScreen = () => {
   return (

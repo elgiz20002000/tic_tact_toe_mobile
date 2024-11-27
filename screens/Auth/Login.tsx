@@ -1,31 +1,29 @@
-import { Image, StyleSheet } from "react-native";
-import authLogo from "@/assets/images/auth_logo.png";
-import { Colors } from "@/shared/constants/Colors";
-import Button from "@/shared/components/button";
-import GoogleIcon from "@/assets/images/google.png";
-import FaceBookIcon from "@/assets/images/facebook.png";
 import { useRouter } from "expo-router";
 import { useCallback } from "react";
+import { Image, StyleSheet } from "react-native";
+
+import FaceBookIcon from "@/assets/images/facebook.png";
+import GoogleIcon from "@/assets/images/google.png";
+import Button from "@/shared/components/button";
 import SafeAreaView from "@/shared/components/themed/SafeAreaView";
-import View from "@/shared/components/themed/View";
 import Text from "@/shared/components/themed/Text";
-import { useTheme } from "@/shared/contexts/Theme";
+import View from "@/shared/components/themed/View";
+import { Colors } from "@/shared/constants/Colors";
+
+import AuthLogo from "./components/AuthLogo";
 
 export const LoginScreen = () => {
   const router = useRouter();
-  const theme = useTheme();
-
-  console.log(theme, "theme");
 
   const onAuthByProviders = useCallback(() => {
-    router.push("/auth/preparing");
+    router.replace("/auth/preparing");
   }, []);
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.welcomeContainer}>
         <View style={styles.welcomeContentContainer}>
-          <Image source={authLogo} style={styles.img} />
+          <AuthLogo style={styles.img} />
           <Text style={styles.welcomeTitle}>Welcome</Text>
           <Text style={styles.welcomeDesccription}>
             Please sign in to continue.

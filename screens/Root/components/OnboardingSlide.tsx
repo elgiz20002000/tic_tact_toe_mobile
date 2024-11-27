@@ -1,17 +1,19 @@
-import Onboarding from "react-native-onboarding-swiper";
+import { useRouter } from "expo-router";
+import { useCallback } from "react";
 import { StyleSheet } from "react-native";
-import { Spacing } from "@/shared/constants/Colors";
+import Onboarding from "react-native-onboarding-swiper";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
-import { CustomDot } from "./CustomDot";
-import { useRouter } from "expo-router";
-import { useCallback } from "react";
-import useOnboardingPages from "../constants";
-import { useTheme } from "@/shared/contexts/Theme";
+
 import Text from "@/shared/components/themed/Text";
+import { Spacing } from "@/shared/constants/Colors";
+import { useTheme } from "@/shared/contexts/Theme";
+
+import useOnboardingPages from "../constants";
+import { CustomDot } from "./CustomDot";
 
 export const OnboardingSlide = () => {
   const sharedOpacity = useSharedValue(1);
@@ -21,7 +23,7 @@ export const OnboardingSlide = () => {
 
   const handleDone = useCallback(() => {
     sharedOpacity.value = withTiming(0, { duration: 300 });
-    router.push("/auth/login");
+    router.replace("/auth/login");
   }, [router, sharedOpacity]);
 
   const animatedStyle = useAnimatedStyle(() => ({

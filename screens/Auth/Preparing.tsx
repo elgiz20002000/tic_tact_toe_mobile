@@ -1,9 +1,13 @@
-import { StyleSheet, Text, View } from "react-native";
-import { useCallback, useEffect, useState } from "react";
-import * as Progress from "react-native-progress";
-import { useRouter } from "expo-router";
-import { getMessageByStep } from "./helpers/getMessageByStep";
 import { useIsFocused } from "@react-navigation/native";
+import { useRouter } from "expo-router";
+import { useCallback, useEffect, useState } from "react";
+import { StyleSheet } from "react-native";
+import * as Progress from "react-native-progress";
+
+import Text from "@/shared/components/themed/Text";
+import View from "@/shared/components/themed/View";
+
+import { getMessageByStep } from "./helpers/getMessageByStep";
 
 const PreparingScreen = () => {
   const [step, setStep] = useState(0);
@@ -13,13 +17,11 @@ const PreparingScreen = () => {
 
   useEffect(() => {
     if (!isFocused) return;
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    !step && setStep(1);
     const interval = setInterval(() => {
       setStep((prevStep) => {
         if (prevStep >= 4) {
           clearInterval(interval);
-          router.push("/auth/connectionError");
+          router.replace("/auth/connectionError");
           return prevStep;
         }
         return prevStep + 1;

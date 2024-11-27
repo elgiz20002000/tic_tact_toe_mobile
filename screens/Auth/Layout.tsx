@@ -1,5 +1,6 @@
-import { useTheme } from "@/shared/contexts/Theme";
 import { Stack } from "expo-router";
+
+import { useTheme } from "@/shared/contexts/Theme";
 
 export default function Layout() {
   const theme = useTheme();
@@ -11,11 +12,12 @@ export default function Layout() {
           contentStyle: {
             backgroundColor: theme.background,
           },
+          headerShown: false,
         }}
       >
-        <Stack.Screen name="login" options={{ headerShown: false }} />
-        <Stack.Screen name="preparing" options={{ headerShown: false }} />
-        <Stack.Screen name="connectionError" options={{ headerShown: false }} />
+        <Stack.Screen name="login" />
+        <Stack.Screen name="preparing" />
+        <Stack.Screen name="connectionError" />
       </Stack>
     </>
   );
