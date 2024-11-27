@@ -8,16 +8,6 @@
     "icon": "./assets/images/app_logo.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/images/logo.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff",
-      "dark": {
-        "image": "./assets/images/logo.png",
-        "backgroundColor": "#000000",
-        "resizeMode": "contain"
-      }
-    },
 
     "ios": {
       "supportsTablet": true,
@@ -30,7 +20,21 @@
       },
       "package": "com.anonymous.reactnative_tic_tac_toe"
     },
-    "plugins": ["expo-router"],
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#232323",
+          "image": "./assets/images/app_logo.png",
+          "dark": {
+            "image": "./assets/images/app_logo.png",
+            "backgroundColor": "#000000"
+          },
+          "imageWidth": 200
+        }
+      ]
+    ],
     "experiments": {
       "typedRoutes": true
     }

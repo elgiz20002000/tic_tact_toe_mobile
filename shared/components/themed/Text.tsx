@@ -1,12 +1,13 @@
-import { useTheme } from "@/shared/contexts/Theme";
 import { Text as DefaultText, TextProps } from "react-native";
+
+import { useTheme } from "@/shared/contexts/Theme";
 
 const Text = (props: TextProps) => {
   const theme = useTheme();
 
-  return (
-    <DefaultText style={[{ color: theme.text }, props.style]} {...props} />
-  );
+  const { style, ...otherProps } = props;
+
+  return <DefaultText style={[{ color: theme.text }, style]} {...otherProps} />;
 };
 
 export default Text;

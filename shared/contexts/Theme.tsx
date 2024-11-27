@@ -1,13 +1,15 @@
-import React, {
+import {
   createContext,
-  useContext,
-  useState,
-  useEffect,
   FC,
   PropsWithChildren,
+  useContext,
+  useEffect,
+  useState,
 } from "react";
 import { useColorScheme } from "react-native";
+
 import { Colors } from "@/shared/constants/Colors";
+
 import { IColorsScheme } from "../interfaces";
 
 const ThemeContext = createContext({} as IColorsScheme);

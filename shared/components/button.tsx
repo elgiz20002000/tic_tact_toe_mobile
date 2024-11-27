@@ -1,6 +1,8 @@
+import { FC, ReactNode } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
-import React, { FC, ReactNode } from "react";
+
 import { Colors } from "@/shared/constants/Colors";
+
 import Text from "./themed/Text";
 
 interface IButton {
