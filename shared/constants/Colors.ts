@@ -14,7 +14,11 @@ export const Colors: {
     tint: tintColorLight,
     icon: "#687076",
     tabIconDefault: "#687076",
+    cardBackgroundColor: "#f5f5f5",
     tabIconSelected: tintColorLight,
+    greenText: '#00C096',
+    redText: '#FF827E',
+    orangeText: "#FFB048",
     slider: {
       dotBackground: "#E3E3E3",
       selectedDotBackground: "#46A3FF",
@@ -28,7 +32,11 @@ export const Colors: {
     tint: tintColorDark,
     icon: "#9BA1A6",
     tabIconDefault: "#9BA1A6",
+    cardBackgroundColor: "#fff",
     tabIconSelected: tintColorDark,
+    greenText: '#9BA1A6',
+    redText: '#9BA1A6',
+    orangeText: "#9BA1A6",
     slider: {
       dotBackground: "#E3E3E3",
       selectedDotBackground: "#46A3FF",

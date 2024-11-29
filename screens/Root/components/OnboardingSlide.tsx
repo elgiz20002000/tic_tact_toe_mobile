@@ -23,7 +23,7 @@ export const OnboardingSlide = () => {
 
   const handleDone = useCallback(() => {
     sharedOpacity.value = withTiming(0, { duration: 300 });
-    router.replace("/auth/login");
+    router.replace("/(auth)/login");
   }, [router, sharedOpacity]);
 
   const animatedStyle = useAnimatedStyle(() => ({

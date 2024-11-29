@@ -16,7 +16,7 @@ export const LoginScreen = () => {
   const router = useRouter();
 
   const onAuthByProviders = useCallback(() => {
-    router.replace("/auth/preparing");
+    router.replace("/(auth)/preparing");
   }, []);
 
   return (

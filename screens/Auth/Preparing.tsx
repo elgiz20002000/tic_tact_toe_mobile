@@ -21,7 +21,7 @@ const PreparingScreen = () => {
       setStep((prevStep) => {
         if (prevStep >= 4) {
           clearInterval(interval);
-          router.replace("/auth/connectionError");
+          router.replace("/(main)/home");
           return prevStep;
         }
         return prevStep + 1;

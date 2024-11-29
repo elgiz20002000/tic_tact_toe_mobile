@@ -14,7 +14,7 @@ const ConnectionError = () => {
   const theme = useTheme();
 
   const onReload = useCallback(() => {
-    router.replace("/auth/preparing");
+    router.replace("/(auth)/preparing");
   }, [router]);
 
   return (
