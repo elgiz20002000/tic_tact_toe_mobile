@@ -3,10 +3,8 @@ import { useRouter } from "expo-router";
 import { useCallback, useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import * as Progress from "react-native-progress";
-
 import Text from "@/shared/components/themed/Text";
 import View from "@/shared/components/themed/View";
-
 import { getMessageByStep } from "./helpers/getMessageByStep";
 
 const PreparingScreen = () => {

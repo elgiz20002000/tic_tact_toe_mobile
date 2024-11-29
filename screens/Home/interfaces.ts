@@ -1,4 +1,4 @@
-import { EGameResult } from "./constans";
+import { EGameOverviewType, EGameResult } from "./constans";
 
 export interface IHistoryItem {
   id: string;
@@ -22,4 +22,10 @@ export interface IStatisticsCard {
 
 export interface IGameOverviewRenderItem {
   item: IHistoryItem | IScoreboardItem;
+}
+
+export interface IGameOverview {
+  header: string;
+  data: IHistoryItem[] | IScoreboardItem[];
+  type: EGameOverviewType;
 }

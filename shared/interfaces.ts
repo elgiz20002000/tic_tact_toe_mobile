@@ -10,9 +10,12 @@ export interface IColorsScheme {
   tabIconSelected: string;
   slider: ISliderColors;
   cardBackgroundColor: string;
-  greenText: string;
-  redText: string;
-  orangeText: string;
+  green: string;
+  red: string;
+  orange: string;
+  backgroundGray: string;
+  backgroundWhite: string;
+  blue: string;
 }
 
 export interface ISliderColors {
