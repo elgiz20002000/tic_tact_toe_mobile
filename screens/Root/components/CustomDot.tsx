@@ -18,7 +18,7 @@ export const CustomDot: FC<DotProps> = ({ selected }) => {
         backgroundColor: theme.slider.dotBackground,
       };
     },
-    [theme]
+    [theme],
   );
 
   return <View style={[styles.dot, dotStyle(selected)]} />;

@@ -1,10 +1,10 @@
-export enum GameResult {
+export enum EGameResult {
   WON = "WON",
   LOST = "LOST",
   DRAW = "DRAW",
 }
 
-export enum EType {
+export enum EGameOverviewType {
   History = "history",
   Scoreboard = "scoreboard",
 }

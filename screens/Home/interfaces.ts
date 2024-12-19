@@ -1,13 +1,11 @@
-import { GameResult } from "./constans";
+import { EGameResult } from "./constans";
 
 export interface IHistoryItem {
   id: string;
   playerName: string;
   date: string;
-  result: GameResult;
+  result: EGameResult;
 }
-
-export type IHistory = IHistoryItem[];
 
 export interface IScoreboardItem {
   id: string;
@@ -15,11 +13,13 @@ export interface IScoreboardItem {
   playerName: string;
   score: number;
 }
- export type IScoreboard=IScoreboardItem[]
 
-
- export interface IStatisticsCard{
+export interface IStatisticsCard {
   wins: number;
   losses: number;
   draws: number;
- }
+}
+
+export interface IGameOverviewRenderItem {
+  item: IHistoryItem | IScoreboardItem;
+}

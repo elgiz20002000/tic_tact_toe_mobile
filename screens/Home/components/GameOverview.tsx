@@ -1,64 +1,69 @@
-import React, { FC } from "react";
-import { StyleSheet, FlatList, TouchableOpacity } from "react-native";
+import { FC, useCallback } from "react";
+import { FlatList, StyleSheet, TouchableOpacity } from "react-native";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+
 import Text from "@/shared/components/themed/Text";
 import View from "@/shared/components/themed/View";
 import { Colors } from "@/shared/constants/Colors";
-import Icon from "react-native-vector-icons/MaterialIcons";
-import { EType } from "../constans";
-import { IHistory, IScoreboard } from "../interfaces";
 
-type GameOverviewProps = {
+import { EGameOverviewType } from "../constans";
+import {
+  IGameOverviewRenderItem,
+  IHistoryItem,
+  IScoreboardItem,
+} from "../interfaces";
+
+interface IGameOverviewProps {
   header: string;
-  data: IHistory | IScoreboard;
-  type: EType;
-};
+  data: IHistoryItem[] | IScoreboardItem[];
+  type: EGameOverviewType;
+}
 
-const GameOverview: FC<GameOverviewProps> = ({ header, data, type }) => {
-  const renderItem = ({
-    item,
-  }: {
-    item: IHistory[number] | IScoreboard[number];
-  }) => {
-    if (type === EType.History) {
-      const historyItem = item as IHistory[number];
+const GameOverview: FC<IGameOverviewProps> = ({ header, data, type }) => {
+  const renderItem = useCallback(
+    ({ item }: IGameOverviewRenderItem) => {
+      if (type === EGameOverviewType.History) {
+        const historyItem = item as IHistoryItem;
 
-      return (
-        <View style={styles.row}>
-          <View>
-            <Text style={styles.playerName}>{historyItem.playerName}</Text>
-            <Text style={styles.date}>{historyItem.date}</Text>
-          </View>
-          <Text
-            style={[
-              styles.result,
-              styles[historyItem.result.toLowerCase() as keyof typeof styles],
-            ]}
-          >
-            {historyItem.result}
-          </Text>
-        </View>
-      );
-    } else if (type === EType.Scoreboard) {
-      const scoreboardItem = item as IScoreboard[number];
-      return (
-        <View style={styles.row}>
-          <View style={styles.scoreRow}>
-            <Icon
-              name="star"
-              size={20}
-              color={Colors.light.orangeText}
-              style={{ backgroundColor: Colors.light.cardBackgroundColor }}
-            />
-            <Text style={styles.rank}>
-              {scoreboardItem.rank}. {scoreboardItem.playerName}
+        return (
+          <View style={styles.row}>
+            <View>
+              <Text style={styles.playerName}>{historyItem.playerName}</Text>
+              <Text style={styles.date}>{historyItem.date}</Text>
+            </View>
+            <Text
+              style={[
+                styles.result,
+                styles[historyItem.result.toLowerCase() as keyof typeof styles],
+              ]}
+            >
+              {historyItem.result}
             </Text>
           </View>
-          <Text style={styles.score}>{scoreboardItem.score}</Text>
-        </View>
-      );
-    }
-    return null;
-  };
+        );
+      } else if (type === EGameOverviewType.Scoreboard) {
+        const scoreboardItem = item as IScoreboardItem;
+        return (
+          <View style={styles.row}>
+            <View style={styles.scoreRow}>
+              <MaterialIcons
+                name="star"
+                size={20}
+                color={Colors.light.orangeText}
+                style={{ backgroundColor: Colors.light.cardBackgroundColor }}
+              />
+              <Text style={styles.rank}>
+                {scoreboardItem.rank}. {scoreboardItem.playerName}
+              </Text>
+            </View>
+            <Text style={styles.score}>{scoreboardItem.score}</Text>
+          </View>
+        );
+      }
+      return null;
+    },
+    [type]
+  );
 
   return (
     <View style={styles.wrapper}>
@@ -76,7 +81,7 @@ const GameOverview: FC<GameOverviewProps> = ({ header, data, type }) => {
             <View style={styles.emptyState}>
               <Text style={styles.emptyTitle}>Empty</Text>
               <Text style={styles.emptySubtitle}>
-                {type === EType.History
+                {type === EGameOverviewType.History
                   ? "Play some game."
                   : "Start playing folks."}
               </Text>
@@ -112,6 +117,7 @@ const styles = StyleSheet.create({
   scoreRow: {
     flexDirection: "row",
     alignItems: "center",
+    backgroundColor: "transparent",
   },
   playerName: {
     fontSize: 16,

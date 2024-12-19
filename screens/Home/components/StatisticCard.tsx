@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { StyleSheet } from "react-native";
+
 import Text from "@/shared/components/themed/Text";
 import View from "@/shared/components/themed/View";
 import { Colors } from "@/shared/constants/Colors";
+
 import { IStatisticsCard } from "../interfaces";
-
-
 
 const StatisticsCard: FC<IStatisticsCard> = ({ wins, losses, draws }) => {
   return (
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   statNumber: {
-    fontSize: 24, 
+    fontSize: 24,
     fontWeight: "bold",
   },
   statLabel: {
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   separator: {
     width: 1,
     height: 40,
-    backgroundColor: Colors.light.textGray
+    backgroundColor: Colors.light.textGray,
   },
 });
 
