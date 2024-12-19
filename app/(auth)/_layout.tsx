@@ -1,7 +1,8 @@
 import { Stack } from "expo-router";
+
 import { useTheme } from "@/shared/contexts/Theme";
 
-export default function RootLayout() {
+export default function Layout() {
   const theme = useTheme();
   return (
     <Stack
@@ -11,10 +12,6 @@ export default function RootLayout() {
         },
         headerShown: false,
       }}
-    >
-      <Stack.Screen name="login" />
-      <Stack.Screen name="preparing" />
-      <Stack.Screen name="connectionError" />
-    </Stack>
+    />
   );
 }

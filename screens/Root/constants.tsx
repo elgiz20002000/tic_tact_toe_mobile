@@ -53,7 +53,7 @@ const useOnboardingPages = () => {
           "Earn points and make your own way to the top of the scoreboard!",
       },
     ],
-    [theme]
+    [theme],
   );
 };
 

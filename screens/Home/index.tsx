@@ -1,12 +1,14 @@
-import React from "react";
 import { StyleSheet } from "react-native";
-import StatisticsCard from "./components/StatisticCard";
+
 import SafeAreaView from "@/shared/components/themed/SafeAreaView";
 import Text from "@/shared/components/themed/Text";
 import View from "@/shared/components/themed/View";
-import GameOverview from "./components/GameOverviewCard";
+
+import GameOverview from "./components/GameOverview";
+import StatisticsCard from "./components/StatisticCard";
+import { EGameOverviewType } from "./constans";
 import { historyData, scoreboardData } from "./data";
-import { EType } from "./constans";
+
 export const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -18,11 +20,15 @@ export const HomeScreen = () => {
         </View>
       </View>
       <View style={styles.gameCards}>
-        <GameOverview header="Game History" data={historyData} type={EType.History} />
+        <GameOverview
+          header="Game History"
+          data={historyData}
+          type={EGameOverviewType.History}
+        />
         <GameOverview
           header="Scoreboard"
           data={scoreboardData}
-          type={EType.Scoreboard}
+          type={EGameOverviewType.Scoreboard}
         />
       </View>
     </SafeAreaView>
@@ -56,4 +62,3 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-

@@ -17,7 +17,7 @@ const ThemeContext = createContext({} as IColorsScheme);
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const systemColorScheme = useColorScheme();
   const [theme, setTheme] = useState(
-    systemColorScheme === "dark" ? Colors.dark : Colors.light
+    systemColorScheme === "dark" ? Colors.dark : Colors.light,
   );
 
   useEffect(() => {

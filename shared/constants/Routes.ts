@@ -6,6 +6,3 @@ export const Routes: IRoute = {
   ConnectionError: "/auth/connectionError",
   Home: "/",
 };
-
-
-
