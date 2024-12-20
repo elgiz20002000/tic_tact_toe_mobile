@@ -1,16 +1,11 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
-
 import { Colors } from "@/shared/constants/Colors";
 
-import Text from "./themed/Text";
+import Text from "../themed/Text";
+import { IButton } from "./interfaces";
 
-interface IButton {
-  text: string;
-  onPress?: () => void;
-  rightIcon?: ReactNode;
-  leftIcon?: ReactNode;
-}
+
 
 const Button: FC<IButton> = ({ text, onPress, rightIcon, leftIcon }) => {
   return (

@@ -1,25 +1,20 @@
 import { FC, useCallback } from "react";
 import { FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-
 import Text from "@/shared/components/themed/Text";
 import View from "@/shared/components/themed/View";
 import { Colors } from "@/shared/constants/Colors";
-
 import { EGameOverviewType } from "../constans";
 import {
+  IGameOverview,
   IGameOverviewRenderItem,
   IHistoryItem,
   IScoreboardItem,
 } from "../interfaces";
 
-interface IGameOverviewProps {
-  header: string;
-  data: IHistoryItem[] | IScoreboardItem[];
-  type: EGameOverviewType;
-}
 
-const GameOverview: FC<IGameOverviewProps> = ({ header, data, type }) => {
+
+const GameOverview: FC<IGameOverview> = ({ header, data, type }) => {
   const renderItem = useCallback(
     ({ item }: IGameOverviewRenderItem) => {
       if (type === EGameOverviewType.History) {
@@ -49,8 +44,7 @@ const GameOverview: FC<IGameOverviewProps> = ({ header, data, type }) => {
               <MaterialIcons
                 name="star"
                 size={20}
-                color={Colors.light.orangeText}
-                style={{ backgroundColor: Colors.light.cardBackgroundColor }}
+                color={Colors.light.orange}
               />
               <Text style={styles.rank}>
                 {scoreboardItem.rank}. {scoreboardItem.playerName}
@@ -103,7 +97,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   container: {
-    backgroundColor: Colors.light.cardBackgroundColor,
     borderRadius: 10,
     padding: 10,
   },
@@ -112,7 +105,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingVertical: 5,
-    backgroundColor: Colors.light.cardBackgroundColor,
   },
   scoreRow: {
     flexDirection: "row",
@@ -121,22 +113,20 @@ const styles = StyleSheet.create({
   },
   playerName: {
     fontSize: 16,
-    backgroundColor: Colors.light.cardBackgroundColor,
   },
   date: {
     fontSize: 14,
     color: "gray",
-    backgroundColor: Colors.light.cardBackgroundColor,
   },
   result: {
     fontSize: 16,
     fontWeight: "bold",
   },
   won: {
-    color: Colors.light.greenText,
+    color: Colors.light.green,
   },
   lost: {
-    color: Colors.light.redText,
+    color: Colors.light.red,
   },
   draw: {
     color: Colors.light.textGray,
@@ -144,12 +134,11 @@ const styles = StyleSheet.create({
   rank: {
     fontSize: 16,
     marginLeft: 5,
-    backgroundColor: Colors.light.cardBackgroundColor,
   },
   score: {
     fontSize: 16,
     fontWeight: "bold",
-    color: Colors.light.orangeText,
+    color: Colors.light.orange,
   },
   emptyState: {
     justifyContent: "center",
