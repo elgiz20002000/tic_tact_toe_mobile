@@ -9,6 +9,7 @@ export default function RootLayout() {
     <Tabs screenOptions={{ headerShown: false }}>
       <Tabs.Screen name="home" options={{ title: "Home", tabBarIcon: ({color, size}) => <EntypoIcon name="home" color={color} size={size}/>}} />
       <Tabs.Screen name="onlinePlayers" options={{ title: "Online Players", tabBarIcon: ({color, size}) => <MaterialCommunityIcon name="gamepad" color={color} size={size}/>}} />
+      <Tabs.Screen name="friends" options={{ title: "Friends", tabBarIcon: ({color, size}) => <MaterialCommunityIcon name="account-group" color={color} size={size}/>}} />
     </Tabs>
   );
 }

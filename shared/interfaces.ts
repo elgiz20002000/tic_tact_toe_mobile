@@ -24,4 +24,10 @@ export interface ISliderColors {
   background: string;
 }
 
+export interface ICompareModal{
+  modalVisible: boolean;
+  setModalVisible: (visible: boolean) => void;
+  name: string;
+}
+
 export type IRoute = Record<string, Href>;

@@ -7,3 +7,12 @@ export interface Player {
     inviteStatus?: EInviteStatus; 
   }
   
+  export interface IPlayerCard{
+    player: Player;
+    index: number;
+    handlePresentPress: (player: Player) => void;
+  }
+
+  export interface IPlayerInfo extends Player {
+    isFriend?: boolean;
+  }
