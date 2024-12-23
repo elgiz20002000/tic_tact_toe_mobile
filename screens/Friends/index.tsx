@@ -1,18 +1,17 @@
 import React, { useRef, useState } from 'react';
-import Text from '@/shared/components/themed/Text';
+import { FlatList, StyleSheet } from 'react-native';
 import View from '@/shared/components/themed/View';
-import { StyleSheet, FlatList } from 'react-native';
+import Text from '@/shared/components/themed/Text';
 import SearchBar from '@/shared/components/searchBar';
-import { Colors } from '@/shared/constants/Colors';
+import { players } from '../OnlinePlayers/mockData';
+import PlayerCard from '../OnlinePlayers/components/PlayerCard';
+import { Player } from '../OnlinePlayers/interface';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import { players } from './mockData';
-import { Player } from './interface';
-import BottomSheet from '@/shared/components/bottomSheet';
-import PlayerInfo from '@/screens/OnlinePlayers/components/PlayerInfo';
 import { IBottomSheetRef } from '@/shared/components/bottomSheet/interfaces';
-import PlayerCard from './components/PlayerCard';
+import BottomSheet from '@/shared/components/bottomSheet';
+import PlayerInfo from '../OnlinePlayers/components/PlayerInfo';
 
-export const OnlinePlayersScreen = () => {
+export const FriendsScreen = () => {
   const bottomSheetModalRef = useRef<IBottomSheetRef>(null);
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
 
@@ -21,7 +20,7 @@ export const OnlinePlayersScreen = () => {
     bottomSheetModalRef.current?.present();
   };
 
-  const renderPlayerItem = ({ item, index }: { item: Player; index: number }) => (
+  const renderFriendItem = ({ item, index }: { item: Player; index: number }) => (
     <PlayerCard
       key={index}
       player={item}
@@ -33,19 +32,23 @@ export const OnlinePlayersScreen = () => {
   return (
     <BottomSheetModalProvider>
       <View style={styles.container}>
-        <Text style={styles.headerText}>Online Players</Text>
+        <Text style={styles.headerText}>Friends</Text>
         <SearchBar />
         <FlatList
           data={players}
-          renderItem={renderPlayerItem}
+          renderItem={renderFriendItem}
           keyExtractor={(item, index) => index.toString()}
         />
-        <BottomSheet ref={bottomSheetModalRef}>
-          {selectedPlayer && (
-            <PlayerInfo name={selectedPlayer.name} status={selectedPlayer.status} />
-          )}
-        </BottomSheet>
       </View>
+      <BottomSheet ref={bottomSheetModalRef}>
+        {selectedPlayer && (
+          <PlayerInfo
+            name={selectedPlayer.name}
+            status={selectedPlayer.status}
+            isFriend={true} // Pass the isFriend prop
+          />
+        )}
+      </BottomSheet>
     </BottomSheetModalProvider>
   );
 };
@@ -61,17 +64,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 20,
   },
-  noPlayersInfo: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  noPlayersText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 5,
-    color: Colors.light.text,
-  },
 });
 
-export default OnlinePlayersScreen;
+export default FriendsScreen;

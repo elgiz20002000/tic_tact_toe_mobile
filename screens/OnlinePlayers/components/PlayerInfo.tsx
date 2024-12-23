@@ -1,13 +1,18 @@
-import React from "react";
-import Text from "@/shared/components/themed/Text";
-import {TouchableOpacity, View } from "react-native";
-import StatisticsCard from "@/screens/Home/components/StatisticCard";
-import { Colors } from "@/shared/constants/Colors";
-import { StyleSheet } from "react-native";
-import { Player } from "@/screens/OnlinePlayers/interface";
-import { EStatus } from "@/screens/OnlinePlayers/constants";
+import React, { useState } from 'react';
+import Text from '@/shared/components/themed/Text';
+import { TouchableOpacity, View } from 'react-native';
+import StatisticsCard from '@/screens/Home/components/StatisticCard';
+import { Colors } from '@/shared/constants/Colors';
+import { StyleSheet } from 'react-native';
+import { IPlayerInfo } from '@/screens/OnlinePlayers/interface';
+import { EStatus } from '@/screens/OnlinePlayers/constants';
+import CompareModal from '@/shared/components/compareModal';
 
-const PlayerInfo = ({ name, status }: Player) => {
+
+
+const PlayerInfo: React.FC<IPlayerInfo> = ({ name, status, isFriend = false }) => {
+const [modalVisible, setModalVisible] = useState(false);
+  
   return (
     <View style={styles.playerInfoContainer}>
       <View style={styles.playerNameContainer}>
@@ -16,37 +21,41 @@ const PlayerInfo = ({ name, status }: Player) => {
           <View
             style={[
               styles.dot,
-              status ===  EStatus.Online ? styles.onlineDot : styles.playingDot,
+              status === EStatus.Online ? styles.onlineDot : styles.playingDot,
             ]}
           />
           <Text>{status}</Text>
         </View>
       </View>
       <StatisticsCard wins={24} losses={18} draws={5} />
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Add a Friend</Text>
+      <TouchableOpacity style={[styles.button,isFriend && styles.removeButton]} onPress={() => setModalVisible(true)}>
+        <Text style={styles.buttonText}>
+          {isFriend ? 'Remove a Friend' : 'Add a Friend'}
+        </Text>
       </TouchableOpacity>
+      <CompareModal modalVisible={modalVisible} setModalVisible={setModalVisible} name={name}/>
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   playerInfoContainer: {
-    width: "100%",
+    width: '100%',
   },
   playerNameContainer: {
-    alignItems: "center",
-    textAlign: "center",
+    alignItems: 'center',
+    textAlign: 'center',
   },
   statusContainer: {
     marginTop: 10,
-    flexDirection: "row",
-    justifyContent: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
     marginBottom: 10,
-    alignItems: "center",
+    alignItems: 'center',
   },
   playerName: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   dot: {
     width: 8,
@@ -65,12 +74,16 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.light.blue,
     padding: 15,
     borderRadius: 5,
-    alignItems: "center",
+    alignItems: 'center',
   },
   buttonText: {
     color: Colors.light.backgroundWhite,
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
+  removeButton:{
+    backgroundColor: Colors.light.red,
+  }
 });
+
 export default PlayerInfo;
