@@ -1,22 +1,19 @@
-import React, { forwardRef, useImperativeHandle, useRef } from "react";
-import { StyleSheet } from "react-native";
 import {
   BottomSheetBackdrop,
   BottomSheetModal,
   BottomSheetView,
 } from "@gorhom/bottom-sheet";
+import { forwardRef, useImperativeHandle, useRef } from "react";
+import { StyleSheet } from "react-native";
+
 import { useTheme } from "../../contexts/Theme";
-import { IBottomSheet, IBottomSheetRef} from "./interfaces";
+import { IBottomSheet, IBottomSheetRef } from "./interfaces";
 
-
-
-
-
-const BottomSheet = forwardRef<IBottomSheetRef, IBottomSheet>(
+export const BottomSheet = forwardRef<IBottomSheetRef, IBottomSheet>(
   ({ children }, ref) => {
     const bottomSheetModalRef = useRef<BottomSheetModal>(null);
     const theme = useTheme();
-    
+
     useImperativeHandle(ref, () => ({
       present: () => bottomSheetModalRef.current?.present(),
       close: () => bottomSheetModalRef.current?.close(),
@@ -25,7 +22,8 @@ const BottomSheet = forwardRef<IBottomSheetRef, IBottomSheet>(
     return (
       <BottomSheetModal
         ref={bottomSheetModalRef}
-        snapPoints={["50%"]}
+        snapPoints={[230]}
+        enableOverDrag={false}
         backgroundStyle={styles.background}
         backdropComponent={(props) => (
           <BottomSheetBackdrop
@@ -38,9 +36,14 @@ const BottomSheet = forwardRef<IBottomSheetRef, IBottomSheet>(
         )}
         handleComponent={null}
       >
-        <BottomSheetView style={[styles.contentContainer,{ backgroundColor: theme.background }]}>
+        <BottomSheetView
+          style={[
+            styles.contentContainer,
+            { backgroundColor: theme.background },
+          ]}
+        >
           {children}
-          </BottomSheetView>
+        </BottomSheetView>
       </BottomSheetModal>
     );
   }
@@ -59,5 +62,3 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 30,
   },
 });
-
-export default BottomSheet;

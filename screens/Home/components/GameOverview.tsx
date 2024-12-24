@@ -1,9 +1,11 @@
 import { FC, useCallback } from "react";
 import { FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import Text from "@/shared/components/themed/Text";
-import View from "@/shared/components/themed/View";
+
+import { Text } from "@/shared/components/themed/Text";
+import { View } from "@/shared/components/themed/View";
 import { Colors } from "@/shared/constants/Colors";
+
 import { EGameOverviewType } from "../constans";
 import {
   IGameOverview,
@@ -12,9 +14,7 @@ import {
   IScoreboardItem,
 } from "../interfaces";
 
-
-
-const GameOverview: FC<IGameOverview> = ({ header, data, type }) => {
+export const GameOverview: FC<IGameOverview> = ({ header, data, type }) => {
   const renderItem = useCallback(
     ({ item }: IGameOverviewRenderItem) => {
       if (type === EGameOverviewType.History) {
@@ -112,14 +112,14 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
   },
   playerName: {
-    fontSize: 16,
+    fontSize: 14,
   },
   date: {
-    fontSize: 14,
+    fontSize: 12,
     color: "gray",
   },
   result: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "bold",
   },
   won: {
@@ -132,11 +132,11 @@ const styles = StyleSheet.create({
     color: Colors.light.textGray,
   },
   rank: {
-    fontSize: 16,
+    fontSize: 14,
     marginLeft: 5,
   },
   score: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "bold",
     color: Colors.light.orange,
   },
@@ -146,14 +146,12 @@ const styles = StyleSheet.create({
     height: 100,
   },
   emptyTitle: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "bold",
     color: Colors.light.textGray,
   },
   emptySubtitle: {
-    fontSize: 14,
+    fontSize: 12,
     color: Colors.light.textGray,
   },
 });
-
-export default GameOverview;

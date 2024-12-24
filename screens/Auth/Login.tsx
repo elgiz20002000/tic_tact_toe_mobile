@@ -1,14 +1,16 @@
 import { useRouter } from "expo-router";
 import { useCallback } from "react";
 import { Image, StyleSheet } from "react-native";
+
 import FaceBookIcon from "@/assets/images/facebook.png";
 import GoogleIcon from "@/assets/images/google.png";
-import SafeAreaView from "@/shared/components/themed/SafeAreaView";
-import Text from "@/shared/components/themed/Text";
-import View from "@/shared/components/themed/View";
+import { Button } from "@/shared/components/button";
+import { SafeAreaView } from "@/shared/components/themed/SafeAreaView";
+import { Text } from "@/shared/components/themed/Text";
+import { View } from "@/shared/components/themed/View";
 import { Colors } from "@/shared/constants/Colors";
+
 import AuthLogo from "./components/AuthLogo";
-import Button from "@/shared/components/button";
 
 export const LoginScreen = () => {
   const router = useRouter();

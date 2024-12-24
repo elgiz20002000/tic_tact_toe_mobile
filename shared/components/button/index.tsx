@@ -1,13 +1,12 @@
 import { FC } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
+
 import { Colors } from "@/shared/constants/Colors";
 
-import Text from "../themed/Text";
+import { Text } from "../themed/Text";
 import { IButton } from "./interfaces";
 
-
-
-const Button: FC<IButton> = ({ text, onPress, rightIcon, leftIcon }) => {
+export const Button: FC<IButton> = ({ text, onPress, rightIcon, leftIcon }) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.button}>
       {leftIcon}
@@ -16,8 +15,6 @@ const Button: FC<IButton> = ({ text, onPress, rightIcon, leftIcon }) => {
     </TouchableOpacity>
   );
 };
-
-export default Button;
 
 const styles = StyleSheet.create({
   button: {

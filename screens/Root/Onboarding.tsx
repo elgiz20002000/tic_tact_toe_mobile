@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-import SafeAreaView from "@/shared/components/themed/SafeAreaView";
+import { SafeAreaView } from "@/shared/components/themed/SafeAreaView";
 
 import { OnboardingSlide } from "./components/OnboardingSlide";
 

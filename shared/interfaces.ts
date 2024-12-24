@@ -8,14 +8,23 @@ export interface IColorsScheme {
   icon: string;
   tabIconDefault: string;
   tabIconSelected: string;
+  inputText: string;
   slider: ISliderColors;
   cardBackgroundColor: string;
   green: string;
+  white: string;
   red: string;
   orange: string;
   backgroundGray: string;
   backgroundWhite: string;
+  bottomNavigationTab: IBottomNavigationTab;
   blue: string;
+}
+
+export interface IBottomNavigationTab {
+  activeColor: string;
+  inactiveColor: string;
+  background: string;
 }
 
 export interface ISliderColors {
@@ -24,7 +33,7 @@ export interface ISliderColors {
   background: string;
 }
 
-export interface ICompareModal{
+export interface ICompareModal {
   modalVisible: boolean;
   setModalVisible: (visible: boolean) => void;
   name: string;

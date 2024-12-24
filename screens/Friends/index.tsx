@@ -1,15 +1,17 @@
-import React, { useRef, useState } from 'react';
-import { FlatList, StyleSheet } from 'react-native';
-import View from '@/shared/components/themed/View';
-import Text from '@/shared/components/themed/Text';
-import SearchBar from '@/shared/components/searchBar';
-import { players } from '../OnlinePlayers/mockData';
-import PlayerCard from '../OnlinePlayers/components/PlayerCard';
-import { Player } from '../OnlinePlayers/interface';
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import { IBottomSheetRef } from '@/shared/components/bottomSheet/interfaces';
-import BottomSheet from '@/shared/components/bottomSheet';
-import PlayerInfo from '../OnlinePlayers/components/PlayerInfo';
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
+import { useRef, useState } from "react";
+import { FlatList, StyleSheet } from "react-native";
+
+import { BottomSheet } from "@/shared/components/bottomSheet";
+import { IBottomSheetRef } from "@/shared/components/bottomSheet/interfaces";
+import SearchBar from "@/shared/components/searchBar";
+import { Text } from "@/shared/components/themed/Text";
+import { View } from "@/shared/components/themed/View";
+
+import { PlayerCard } from "../OnlinePlayers/components/PlayerCard";
+import { PlayerInfo } from "../OnlinePlayers/components/PlayerInfo";
+import { Player } from "../OnlinePlayers/interface";
+import { players } from "../OnlinePlayers/mockData";
 
 export const FriendsScreen = () => {
   const bottomSheetModalRef = useRef<IBottomSheetRef>(null);
@@ -20,7 +22,13 @@ export const FriendsScreen = () => {
     bottomSheetModalRef.current?.present();
   };
 
-  const renderFriendItem = ({ item, index }: { item: Player; index: number }) => (
+  const renderFriendItem = ({
+    item,
+    index,
+  }: {
+    item: Player;
+    index: number;
+  }) => (
     <PlayerCard
       key={index}
       player={item}
@@ -61,9 +69,7 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 20,
   },
 });
-
-export default FriendsScreen;
