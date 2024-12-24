@@ -1,13 +1,17 @@
 import { FC } from "react";
 import { StyleSheet } from "react-native";
 
-import Text from "@/shared/components/themed/Text";
-import View from "@/shared/components/themed/View";
+import { Text } from "@/shared/components/themed/Text";
+import { View } from "@/shared/components/themed/View";
 import { Colors } from "@/shared/constants/Colors";
 
 import { IStatisticsCard } from "../interfaces";
 
-const StatisticsCard: FC<IStatisticsCard> = ({ wins, losses, draws }) => {
+export const StatisticsCard: FC<IStatisticsCard> = ({
+  wins,
+  losses,
+  draws,
+}) => {
   return (
     <View style={styles.container}>
       <View style={styles.statAbout}>
@@ -59,5 +63,3 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.light.textGray,
   },
 });
-
-export default StatisticsCard;

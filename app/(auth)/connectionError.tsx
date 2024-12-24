@@ -3,10 +3,10 @@ import { useRouter } from "expo-router";
 import { useCallback } from "react";
 import { StyleSheet } from "react-native";
 
-import Button from "@/shared/components/button";
-import SafeAreaView from "@/shared/components/themed/SafeAreaView";
-import Text from "@/shared/components/themed/Text";
-import View from "@/shared/components/themed/View";
+import { Button } from "@/shared/components/button";
+import { SafeAreaView } from "@/shared/components/themed/SafeAreaView";
+import { Text } from "@/shared/components/themed/Text";
+import { View } from "@/shared/components/themed/View";
 import { useTheme } from "@/shared/contexts/Theme";
 
 const ConnectionError = () => {
@@ -31,8 +31,6 @@ const ConnectionError = () => {
   );
 };
 
-export default ConnectionError;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -45,3 +43,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
+
+export default ConnectionError;

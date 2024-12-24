@@ -1,7 +1,4 @@
-export type RouteName = 'home' | 'onlinePlayers' | 'friends';
-
-
-export type IconProps = {
-    color?: string;
-    size?: number;
+export interface IIcon  {
+  color?: string;
+  size?: number;
 };

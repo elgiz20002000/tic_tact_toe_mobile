@@ -2,7 +2,7 @@ import { View as DefaultView, ViewProps } from "react-native";
 
 import { useTheme } from "@/shared/contexts/Theme";
 
-const View = (props: ViewProps) => {
+export const View = (props: ViewProps) => {
   const theme = useTheme();
   const { style, ...restProps } = props;
 
@@ -13,5 +13,3 @@ const View = (props: ViewProps) => {
     />
   );
 };
-
-export default View;

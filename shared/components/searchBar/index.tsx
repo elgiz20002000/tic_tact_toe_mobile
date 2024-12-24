@@ -1,9 +1,12 @@
-import React from "react";
-import { View, TextInput, StyleSheet } from "react-native";
+import { StyleSheet, TextInput, View } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
+
+import { useTheme } from "@/shared/contexts/Theme";
+
 import { Colors } from "../../constants/Colors";
 
 const SearchBar = () => {
+  const theme = useTheme();
   return (
     <View style={styles.container}>
       <Icon
@@ -13,7 +16,7 @@ const SearchBar = () => {
         style={styles.icon}
       />
       <TextInput
-        style={styles.input}
+        style={[styles.input, { color: theme.inputText }]}
         placeholder="Search Players"
         placeholderTextColor={Colors.light.textGray}
       />

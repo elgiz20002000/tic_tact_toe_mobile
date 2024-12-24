@@ -1,26 +1,31 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { IPlayerCard, Player } from '../interface';
-import { EInviteStatus, EStatus } from '../constants';
-import { Colors } from '@/shared/constants/Colors';
+import React from "react";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 
+import { Text } from "@/shared/components/themed/Text";
+import { Colors } from "@/shared/constants/Colors";
 
+import { EInviteStatus, EStatus } from "../constants";
+import { IPlayerCard, Player } from "../interface";
 
-const PlayerCard: React.FC<IPlayerCard> = ({ player, index, handlePresentPress }) => {
-    const getInviteStatusStyle = (player: Player) => {
-        switch (player.inviteStatus) {
-          case EInviteStatus.Accepted:
-            return styles.accepted;
-          case EInviteStatus.Invited:
-            return styles.invited;
-          case EInviteStatus.Pending:
-            return  styles.pending;
-          case EInviteStatus.Denied:
-            return  styles.denied;
-          default:
-            return  styles.playingDot;
-        }
+export const PlayerCard: React.FC<IPlayerCard> = ({
+  player,
+  index,
+  handlePresentPress,
+}) => {
+  const getInviteStatusStyle = (player: Player) => {
+    switch (player.inviteStatus) {
+      case EInviteStatus.Accepted:
+        return styles.accepted;
+      case EInviteStatus.Invited:
+        return styles.invited;
+      case EInviteStatus.Pending:
+        return styles.pending;
+      case EInviteStatus.Denied:
+        return styles.denied;
+      default:
+        return styles.playingDot;
     }
+  };
   return (
     <View style={styles.playerInfo} key={index}>
       <View>
@@ -29,7 +34,9 @@ const PlayerCard: React.FC<IPlayerCard> = ({ player, index, handlePresentPress }
           <View
             style={[
               styles.dot,
-              player.status === EStatus.Online ? styles.onlineDot : styles.playingDot,
+              player.status === EStatus.Online
+                ? styles.onlineDot
+                : styles.playingDot,
             ]}
           />
           <Text>{player.status}</Text>
@@ -73,10 +80,10 @@ const styles = StyleSheet.create({
   },
   playerSatusButtonText: {
     color: Colors.light.backgroundWhite,
-    fontSize: 12,
+    fontSize: 14,
   },
   differentText: {
-    fontSize: 12,
+    fontSize: 14,
   },
   statusContainer: {
     flexDirection: "row",
@@ -98,9 +105,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.light.green,
     borderWidth: 0,
   },
-  invited: {backgroundColor: Colors.light.backgroundGray,
-    borderWidth: 0,
-  },
+  invited: { backgroundColor: Colors.light.backgroundGray, borderWidth: 0 },
   pending: {
     backgroundColor: Colors.light.blue,
     borderWidth: 0,
@@ -110,5 +115,3 @@ const styles = StyleSheet.create({
     borderWidth: 0,
   },
 });
-
-export default PlayerCard;

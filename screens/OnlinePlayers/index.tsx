@@ -1,16 +1,18 @@
-import React, { useRef, useState } from 'react';
-import Text from '@/shared/components/themed/Text';
-import View from '@/shared/components/themed/View';
-import { StyleSheet, FlatList } from 'react-native';
-import SearchBar from '@/shared/components/searchBar';
-import { Colors } from '@/shared/constants/Colors';
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import { players } from './mockData';
-import { Player } from './interface';
-import BottomSheet from '@/shared/components/bottomSheet';
-import PlayerInfo from '@/screens/OnlinePlayers/components/PlayerInfo';
-import { IBottomSheetRef } from '@/shared/components/bottomSheet/interfaces';
-import PlayerCard from './components/PlayerCard';
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
+import { useRef, useState } from "react";
+import { FlatList, StyleSheet } from "react-native";
+
+import { PlayerInfo } from "@/screens/OnlinePlayers/components/PlayerInfo";
+import { BottomSheet } from "@/shared/components/bottomSheet";
+import { IBottomSheetRef } from "@/shared/components/bottomSheet/interfaces";
+import SearchBar from "@/shared/components/searchBar";
+import { Text } from "@/shared/components/themed/Text";
+import { View } from "@/shared/components/themed/View";
+import { Colors } from "@/shared/constants/Colors";
+
+import { PlayerCard } from "./components/PlayerCard";
+import { Player } from "./interface";
+import { players } from "./mockData";
 
 export const OnlinePlayersScreen = () => {
   const bottomSheetModalRef = useRef<IBottomSheetRef>(null);
@@ -21,15 +23,6 @@ export const OnlinePlayersScreen = () => {
     bottomSheetModalRef.current?.present();
   };
 
-  const renderPlayerItem = ({ item, index }: { item: Player; index: number }) => (
-    <PlayerCard
-      key={index}
-      player={item}
-      index={index}
-      handlePresentPress={handlePresentPress}
-    />
-  );
-
   return (
     <BottomSheetModalProvider>
       <View style={styles.container}>
@@ -37,12 +30,22 @@ export const OnlinePlayersScreen = () => {
         <SearchBar />
         <FlatList
           data={players}
-          renderItem={renderPlayerItem}
+          renderItem={({ item, index }) => (
+            <PlayerCard
+              key={index}
+              player={item}
+              index={index}
+              handlePresentPress={handlePresentPress}
+            />
+          )}
           keyExtractor={(item, index) => index.toString()}
         />
         <BottomSheet ref={bottomSheetModalRef}>
           {selectedPlayer && (
-            <PlayerInfo name={selectedPlayer.name} status={selectedPlayer.status} />
+            <PlayerInfo
+              name={selectedPlayer.name}
+              status={selectedPlayer.status}
+            />
           )}
         </BottomSheet>
       </View>
@@ -58,17 +61,17 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 20,
   },
   noPlayersInfo: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   noPlayersText: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 5,
     color: Colors.light.text,
   },

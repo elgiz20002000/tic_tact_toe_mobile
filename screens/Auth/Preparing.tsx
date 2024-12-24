@@ -3,11 +3,13 @@ import { useRouter } from "expo-router";
 import { useCallback, useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import * as Progress from "react-native-progress";
-import Text from "@/shared/components/themed/Text";
-import View from "@/shared/components/themed/View";
+
+import { Text } from "@/shared/components/themed/Text";
+import { View } from "@/shared/components/themed/View";
+
 import { getMessageByStep } from "./helpers/getMessageByStep";
 
-const PreparingScreen = () => {
+export const PreparingScreen = () => {
   const [step, setStep] = useState(0);
   const router = useRouter();
   const isFocused = useIsFocused();
@@ -48,5 +50,3 @@ const styles = StyleSheet.create({
     gap: 12,
   },
 });
-
-export default PreparingScreen;

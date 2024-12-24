@@ -1,10 +1,15 @@
-import React from 'react';
-import { ICompareModal } from '@/shared/interfaces';
-import { Modal, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
-import { Colors } from '@/shared/constants/Colors';
+import React from "react";
+import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-const CompareModal: React.FC<ICompareModal> = ({ modalVisible, setModalVisible, name }) => {
+import { Colors } from "@/shared/constants/Colors";
+import { ICompareModal } from "@/shared/interfaces";
+
+export const CompareModal: React.FC<ICompareModal> = ({
+  modalVisible,
+  setModalVisible,
+  name,
+}) => {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.centeredView}>
@@ -25,7 +30,8 @@ const CompareModal: React.FC<ICompareModal> = ({ modalVisible, setModalVisible, 
               <View>
                 <Text style={styles.title}>Remove a Friend?</Text>
                 <Text style={styles.questionText}>
-                  Are you sure you want to remove "{name}" from your friends list?
+                  Are you sure you want to remove "{name}" from your friends
+                  list?
                 </Text>
               </View>
               <View style={styles.buttonView}>
@@ -50,17 +56,17 @@ const CompareModal: React.FC<ICompareModal> = ({ modalVisible, setModalVisible, 
 const styles = StyleSheet.create({
   centeredView: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   modalView: {
-    width: '80%',
+    width: "80%",
     margin: 20,
     backgroundColor: Colors.light.backgroundWhite,
     borderRadius: 20,
     paddingHorizontal: 15,
     paddingVertical: 25,
-    alignItems: 'center',
+    alignItems: "center",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -71,7 +77,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 15,
   },
   questionText: {
@@ -79,16 +85,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   buttonView: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    width: '100%',
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    width: "100%",
     marginTop: 30,
   },
   textStyle: {
     color: Colors.light.blue,
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 16,
   },
 });
-
-export default CompareModal;

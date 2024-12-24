@@ -1,5 +1,5 @@
-import PreparingScreen from "@/screens/Auth/Preparing";
-import SafeAreaView from "@/shared/components/themed/SafeAreaView";
+import { PreparingScreen } from "@/screens/Auth/Preparing";
+import { SafeAreaView } from "@/shared/components/themed/SafeAreaView";
 
 const Preparing = () => {
   return (

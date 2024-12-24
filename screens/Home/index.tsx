@@ -1,11 +1,11 @@
 import { StyleSheet } from "react-native";
 
-import SafeAreaView from "@/shared/components/themed/SafeAreaView";
-import Text from "@/shared/components/themed/Text";
-import View from "@/shared/components/themed/View";
+import { SafeAreaView } from "@/shared/components/themed/SafeAreaView";
+import { Text } from "@/shared/components/themed/Text";
+import { View } from "@/shared/components/themed/View";
 
-import GameOverview from "./components/GameOverview";
-import StatisticsCard from "./components/StatisticCard";
+import { GameOverview } from "./components/GameOverview";
+import { StatisticsCard } from "./components/StatisticCard";
 import { EGameOverviewType } from "./constans";
 import { historyData, scoreboardData } from "./data";
 

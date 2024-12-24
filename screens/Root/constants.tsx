@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Image } from "react-native";
+
 import onboarding_1 from "@/assets/images/onboarding_1.png";
 import onboarding_2 from "@/assets/images/onboarding_2.png";
 import onboarding_3 from "@/assets/images/onboarding_3.png";
@@ -52,7 +53,7 @@ const useOnboardingPages = () => {
           "Earn points and make your own way to the top of the scoreboard!",
       },
     ],
-    [theme],
+    [theme]
   );
 };
 
