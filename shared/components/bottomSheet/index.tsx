@@ -6,42 +6,43 @@ import {
   BottomSheetView,
 } from "@gorhom/bottom-sheet";
 import { useTheme } from "../../contexts/Theme";
-import { IBottomSheet, IBottomSheetRef} from "./interfaces";
-
-
-
-
+import { IBottomSheet, IBottomSheetRef } from "./interfaces";
 
 const BottomSheet = forwardRef<IBottomSheetRef, IBottomSheet>(
   ({ children }, ref) => {
     const bottomSheetModalRef = useRef<BottomSheetModal>(null);
     const theme = useTheme();
-    
+
     useImperativeHandle(ref, () => ({
       present: () => bottomSheetModalRef.current?.present(),
       close: () => bottomSheetModalRef.current?.close(),
     }));
 
     return (
-      <BottomSheetModal
-        ref={bottomSheetModalRef}
-        snapPoints={["50%"]}
-        backgroundStyle={styles.background}
-        backdropComponent={(props) => (
-          <BottomSheetBackdrop
-            {...props}
-            appearsOnIndex={0}
-            disappearsOnIndex={-1}
-            opacity={0.6}
-            pressBehavior="close"
-          />
-        )}
-        handleComponent={null}
-      >
-        <BottomSheetView style={[styles.contentContainer,{ backgroundColor: theme.background }]}>
-          {children}
-          </BottomSheetView>
-      </BottomSheetModal>
+          <BottomSheetModal
+            ref={bottomSheetModalRef}
+            snapPoints={["50%"]}
+            backgroundStyle={styles.background}
+            backdropComponent={(props) => (
+              <BottomSheetBackdrop
+                {...props}
+                appearsOnIndex={0}
+                disappearsOnIndex={-1}
+                opacity={0.6}
+                pressBehavior="close"
+              />
+            )}
+            handleComponent={null}
+          >
+            <BottomSheetView
+              style={[
+                styles.contentContainer,
+                { backgroundColor: theme.background },
+              ]}
+            >
+              {children}
+            </BottomSheetView>
+          </BottomSheetModal>
     );
   }
 );

@@ -22,6 +22,7 @@ export const Colors: {
     blue: "#46A3FF",
     backgroundGray: "#E3E3E3",
     backgroundWhite: '#fff',
+    inActiveColor: "#2475C5",
     slider: {
       dotBackground: "#E3E3E3",
       selectedDotBackground: "#46A3FF",
@@ -43,6 +44,7 @@ export const Colors: {
     blue:"#9BA1A6",
     backgroundGray: "#9BA1A6",
     backgroundWhite: '#9BA1A6',
+    inActiveColor: "#9BA1A6",
     slider: {
       dotBackground: "#E3E3E3",
       selectedDotBackground: "#46A3FF",

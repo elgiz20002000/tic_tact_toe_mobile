@@ -16,6 +16,7 @@ export interface IColorsScheme {
   backgroundGray: string;
   backgroundWhite: string;
   blue: string;
+  inActiveColor: string;
 }
 
 export interface ISliderColors {
