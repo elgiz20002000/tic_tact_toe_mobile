@@ -32,7 +32,7 @@ export const Colors: {
     slider: {
       dotBackground: "#E3E3E3",
       selectedDotBackground: "#46A3FF",
-      background: "#",
+      background: "#fff",
     },
   },
   dark: {

@@ -3,8 +3,9 @@ import {
   BottomSheetModal,
   BottomSheetView,
 } from "@gorhom/bottom-sheet";
-import { forwardRef, useImperativeHandle, useRef } from "react";
+import { forwardRef, useImperativeHandle, useRef ,useCallback} from "react";
 import { StyleSheet } from "react-native";
+import { useFocusEffect } from '@react-navigation/native';
 
 import { useTheme } from "../../contexts/Theme";
 import { IBottomSheet, IBottomSheetRef } from "./interfaces";
@@ -18,7 +19,14 @@ export const BottomSheet = forwardRef<IBottomSheetRef, IBottomSheet>(
       present: () => bottomSheetModalRef.current?.present(),
       close: () => bottomSheetModalRef.current?.close(),
     }));
-
+    
+    useFocusEffect(
+      useCallback(() => {
+        return () => {
+          bottomSheetModalRef.current?.close();
+        };
+      }, [])
+    );
     return (
       <BottomSheetModal
         ref={bottomSheetModalRef}
