@@ -76,5 +76,6 @@ const styles = StyleSheet.create({
   btnsContainer: {
     gap: 14,
     alignItems: "center",
+    marginBottom: 20,
   },
 });

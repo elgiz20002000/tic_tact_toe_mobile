@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     width: "100%",
     display: "flex",
     alignItems: "center",
+
   },
   statAbout: {
     flexDirection: "row",
