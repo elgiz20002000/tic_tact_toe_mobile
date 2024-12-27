@@ -24,6 +24,8 @@ export const Colors: {
     blue: "#46A3FF",
     backgroundGray: "#E3E3E3",
     backgroundWhite: "#fff",
+    black: "#000",
+    lightGray: "#F1F1F1",
     bottomNavigationTab: {
       activeColor: "#ffffff",
       inactiveColor: "#2475C5",
@@ -34,11 +36,14 @@ export const Colors: {
       selectedDotBackground: "#46A3FF",
       background: "#fff",
     },
+    box: {
+      background: "#F1F1F1",
+    },
   },
   dark: {
     text: "#ADADAD",
     textGray: "#ADADAD",
-    background: "#151718",
+    background: "#0C1017",
     tint: tintColorDark,
     icon: "#9BA1A6",
     tabIconDefault: "#9BA1A6",
@@ -52,6 +57,8 @@ export const Colors: {
     blue: "#46A3FF",
     backgroundGray: "#9BA1A6",
     backgroundWhite: "#9BA1A6",
+    black: "#000",
+    lightGray: "#9BA1A6",
     bottomNavigationTab: {
       activeColor: "#ADADAD",
       inactiveColor: "#12161F",
@@ -61,6 +68,9 @@ export const Colors: {
       dotBackground: "#E3E3E3",
       selectedDotBackground: "#46A3FF",
       background: "#fff",
+    },
+    box: {
+      background: "#12161F",
     },
   },
 };

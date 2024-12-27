@@ -19,6 +19,9 @@ export interface IColorsScheme {
   backgroundWhite: string;
   bottomNavigationTab: IBottomNavigationTab;
   blue: string;
+  black: string;
+  lightGray: string;
+  box: IBox;
 }
 
 export interface IBottomNavigationTab {
@@ -26,7 +29,9 @@ export interface IBottomNavigationTab {
   inactiveColor: string;
   background: string;
 }
-
+export interface IBox {
+  background: string;
+}
 export interface ISliderColors {
   dotBackground: string;
   selectedDotBackground: string;

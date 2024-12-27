@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { useRouter } from "expo-router";
+import { StyleSheet, TouchableOpacity } from "react-native";
 
 import { SafeAreaView } from "@/shared/components/themed/SafeAreaView";
 import { Text } from "@/shared/components/themed/Text";
@@ -7,9 +8,17 @@ import { View } from "@/shared/components/themed/View";
 import { GameOverview } from "./components/GameOverview";
 import { StatisticsCard } from "./components/StatisticCard";
 import { EGameOverviewType } from "./constans";
+// TODO: Remove this line and use your own data model
 import { historyData, scoreboardData } from "./data";
 
 export const HomeScreen = () => {
+  const router = useRouter();
+  const limitedScoreboardData = scoreboardData.slice(0, 5);
+
+  const handlePressScoreboardBox = () => {
+    router.push("/(main)/(home)/scoreboard");
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userAbout}>
@@ -25,11 +34,13 @@ export const HomeScreen = () => {
           data={historyData}
           type={EGameOverviewType.History}
         />
-        <GameOverview
-          header="Scoreboard"
-          data={scoreboardData}
-          type={EGameOverviewType.Scoreboard}
-        />
+        <TouchableOpacity onPress={handlePressScoreboardBox}>
+          <GameOverview
+            header="Scoreboard"
+            data={limitedScoreboardData}
+            type={EGameOverviewType.Scoreboard}
+          />
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -37,8 +48,8 @@ export const HomeScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 23,
     flex: 1,
+    width: "100%",
   },
   headerText: {
     marginTop: 6,
@@ -55,9 +66,9 @@ const styles = StyleSheet.create({
   },
   userAbout: {
     display: "flex",
+    backgroundColor: "transparent",
   },
   gameCards: {
-    marginTop: 60,
     padding: 20,
     flex: 1,
   },
