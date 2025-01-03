@@ -9,7 +9,7 @@ export default function RootLayout() {
 
   useEffect(() => {
     const currentPath = segments.join("/");
-    setShowTabBar(currentPath !== "(main)/home/scoreboard");
+    setShowTabBar(currentPath !== "(main)/(home)/scoreboard");
   }, [segments]);
 
   return (

@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet } from "react-native";
 
 import { StatisticsCard } from "@/screens/home/components/statisticCard";
 import { SafeAreaView } from "@/shared/components/themed/safeAreaView";
@@ -18,7 +18,9 @@ export const HomeScreen = () => {
   const handlePressScoreboardBox = () => {
     router.push("/(main)/(home)/scoreboard");
   };
-
+  const handlePressGameHistoryBox = () => {
+    router.push("/(main)/(home)/gameHistory");
+  };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userAbout}>
@@ -30,17 +32,17 @@ export const HomeScreen = () => {
       </View>
       <View style={styles.gameCards}>
         <GameOverview
+          onPress={handlePressGameHistoryBox}
           header="Game History"
           data={historyData}
           type={EGameOverviewType.History}
         />
-        <TouchableOpacity onPress={handlePressScoreboardBox}>
-          <GameOverview
-            header="Scoreboard"
-            data={limitedScoreboardData}
-            type={EGameOverviewType.Scoreboard}
-          />
-        </TouchableOpacity>
+        <GameOverview
+          onPress={handlePressScoreboardBox}
+          header="Scoreboard"
+          data={limitedScoreboardData}
+          type={EGameOverviewType.Scoreboard}
+        />
       </View>
     </SafeAreaView>
   );

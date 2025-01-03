@@ -16,9 +16,20 @@ export default function HomeLayout() {
       <Stack.Screen
         name="scoreboard"
         options={{
-          headerShown: true,
           headerTitle: "",
           headerBackTitle: "Scoreboard",
+          headerShadowVisible: false,
+          headerStyle: {
+            backgroundColor: theme.background,
+          },
+          headerTintColor: theme.text,
+        }}
+      />
+      <Stack.Screen
+        name="gameHistory"
+        options={{
+          headerTitle: "",
+          headerBackTitle: "Game History",
           headerShadowVisible: false,
           headerStyle: {
             backgroundColor: theme.background,

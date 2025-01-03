@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 
 import { Text } from "@/shared/components/themed/text";
 import { View } from "@/shared/components/themed/view";
@@ -10,12 +10,13 @@ import { EGameOverviewType } from "../constants";
 import { useGameOverviewList } from "../hooks/useGameOverviewList";
 import { IGameOverview } from "../interfaces";
 
-export const GameOverview: FC<IGameOverview> = ({ header, data, type }) => {
+export const GameOverview: FC<IGameOverview> = ({ header, data, type,onPress }) => {
   const theme = useTheme();
 
   const gameOverviewList = useGameOverviewList(type, data);
 
   return (
+    <TouchableOpacity onPress={onPress}>
     <View style={styles.wrapper}>
       <Text style={styles.header}>{header}</Text>
       <View
@@ -35,6 +36,7 @@ export const GameOverview: FC<IGameOverview> = ({ header, data, type }) => {
         )}
       </View>
     </View>
+    </TouchableOpacity>
   );
 };
 
