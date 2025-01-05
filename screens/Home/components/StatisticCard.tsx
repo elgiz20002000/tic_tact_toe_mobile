@@ -1,11 +1,10 @@
 import { FC } from "react";
 import { StyleSheet } from "react-native";
 
-import { Text } from "@/shared/components/themed/Text";
-import { View } from "@/shared/components/themed/View";
-import { Colors } from "@/shared/constants/Colors";
-
-import { IStatisticsCard } from "../interfaces";
+import { IStatisticsCard } from "@/screens/home/interfaces";
+import { Text } from "@/shared/components/themed/text";
+import { View } from "@/shared/components/themed/view";
+import { Colors } from "@/shared/constants/colors";
 
 export const StatisticsCard: FC<IStatisticsCard> = ({
   wins,
@@ -39,7 +38,6 @@ const styles = StyleSheet.create({
     width: "100%",
     display: "flex",
     alignItems: "center",
-
   },
   statAbout: {
     flexDirection: "row",

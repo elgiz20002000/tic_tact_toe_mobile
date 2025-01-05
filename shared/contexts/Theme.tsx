@@ -8,7 +8,7 @@ import {
 } from "react";
 import { useColorScheme } from "react-native";
 
-import { Colors } from "@/shared/constants/Colors";
+import { Colors } from "@/shared/constants/colors";
 
 import { IColorsScheme } from "../interfaces";
 
@@ -17,7 +17,7 @@ const ThemeContext = createContext({} as IColorsScheme);
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const systemColorScheme = useColorScheme();
   const [theme, setTheme] = useState(
-    systemColorScheme === "dark" ? Colors.dark : Colors.light,
+    systemColorScheme === "dark" ? Colors.dark : Colors.light
   );
 
   useEffect(() => {

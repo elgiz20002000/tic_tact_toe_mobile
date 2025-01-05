@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-import { Colors } from "@/shared/constants/Colors";
+import { Colors } from "@/shared/constants/colors";
 import { ICompareModal } from "@/shared/interfaces";
 
 export const CompareModal: React.FC<ICompareModal> = ({

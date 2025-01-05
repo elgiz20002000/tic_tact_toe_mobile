@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { StyleSheet } from "react-native";
 
-import { StatisticsCard } from "@/screens/Home/components/StatisticCard";
+import { StatisticsCard } from "@/screens/home/components/statisticCard";
 import { EStatus } from "@/screens/OnlinePlayers/constants";
 import { IPlayerInfo } from "@/screens/OnlinePlayers/interface";
 import { CompareModal } from "@/shared/components/compareModal";
-import { Text } from "@/shared/components/themed/Text";
-import { Colors } from "@/shared/constants/Colors";
+import { Text } from "@/shared/components/themed/text";
+import { Colors } from "@/shared/constants/colors";
 
 export const PlayerInfo: React.FC<IPlayerInfo> = ({
   name,

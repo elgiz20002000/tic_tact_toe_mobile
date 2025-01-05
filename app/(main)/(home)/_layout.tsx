@@ -1,6 +1,6 @@
 import { Stack } from "expo-router";
 
-import { useTheme } from "@/shared/contexts/Theme";
+import { useTheme } from "@/shared/contexts/theme";
 
 export default function HomeLayout() {
   const theme = useTheme();

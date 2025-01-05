@@ -4,8 +4,8 @@ import { useCallback, useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import * as Progress from "react-native-progress";
 
-import { Text } from "@/shared/components/themed/Text";
-import { View } from "@/shared/components/themed/View";
+import { Text } from "@/shared/components/themed/text";
+import { View } from "@/shared/components/themed/view";
 
 import { getMessageByStep } from "./helpers/getMessageByStep";
 

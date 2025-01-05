@@ -2,8 +2,8 @@ import { FC, useCallback } from "react";
 import { StyleSheet, View } from "react-native";
 import { DotProps } from "react-native-onboarding-swiper";
 
-import { Spacing } from "@/shared/constants/Colors";
-import { useTheme } from "@/shared/contexts/Theme";
+import { Spacing } from "@/shared/constants/colors";
+import { useTheme } from "@/shared/contexts/theme";
 
 export const CustomDot: FC<DotProps> = ({ selected }) => {
   const theme = useTheme();
@@ -18,7 +18,7 @@ export const CustomDot: FC<DotProps> = ({ selected }) => {
         backgroundColor: theme.slider.dotBackground,
       };
     },
-    [theme],
+    [theme]
   );
 
   return <View style={[styles.dot, dotStyle(selected)]} />;

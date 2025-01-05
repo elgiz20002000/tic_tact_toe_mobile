@@ -5,11 +5,11 @@ import { FlatList, StyleSheet } from "react-native";
 import { BottomSheet } from "@/shared/components/bottomSheet";
 import { IBottomSheetRef } from "@/shared/components/bottomSheet/interfaces";
 import SearchBar from "@/shared/components/searchBar";
-import { Text } from "@/shared/components/themed/Text";
-import { View } from "@/shared/components/themed/View";
+import { Text } from "@/shared/components/themed/text";
+import { View } from "@/shared/components/themed/view";
 
-import { PlayerCard } from "../OnlinePlayers/components/PlayerCard";
-import { PlayerInfo } from "../OnlinePlayers/components/PlayerInfo";
+import { PlayerCard } from "../onlinePlayers/components/playerCard";
+import { PlayerInfo } from "../onlinePlayers/components/playerInfo";
 import { Player } from "../OnlinePlayers/interface";
 import { players } from "../OnlinePlayers/mockData";
 

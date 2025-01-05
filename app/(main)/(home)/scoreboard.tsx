@@ -1,4 +1,4 @@
-import ScoreboardScreen from "@/screens/Home/components/Scoreboard";
+import ScoreboardScreen from "@/screens/home/components/scoreboard";
 
 const Scoreboard = () => {
   return <ScoreboardScreen />;

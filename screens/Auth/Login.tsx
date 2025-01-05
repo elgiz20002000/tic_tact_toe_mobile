@@ -5,10 +5,10 @@ import { Image, StyleSheet } from "react-native";
 import FaceBookIcon from "@/assets/images/facebook.png";
 import GoogleIcon from "@/assets/images/google.png";
 import { Button } from "@/shared/components/button";
-import { SafeAreaView } from "@/shared/components/themed/SafeAreaView";
-import { Text } from "@/shared/components/themed/Text";
-import { View } from "@/shared/components/themed/View";
-import { Colors } from "@/shared/constants/Colors";
+import { SafeAreaView } from "@/shared/components/themed/safeAreaView";
+import { Text } from "@/shared/components/themed/text";
+import { View } from "@/shared/components/themed/view";
+import { Colors } from "@/shared/constants/colors";
 
 import AuthLogo from "./components/AuthLogo";
 

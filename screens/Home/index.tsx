@@ -1,14 +1,14 @@
 import { useRouter } from "expo-router";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
-import { SafeAreaView } from "@/shared/components/themed/SafeAreaView";
-import { Text } from "@/shared/components/themed/Text";
-import { View } from "@/shared/components/themed/View";
+import { StatisticsCard } from "@/screens/home/components/statisticCard";
+import { SafeAreaView } from "@/shared/components/themed/safeAreaView";
+import { Text } from "@/shared/components/themed/text";
+import { View } from "@/shared/components/themed/view";
 
-import { GameOverview } from "./components/GameOverview";
-import { StatisticsCard } from "./components/StatisticCard";
-import { EGameOverviewType } from "./constans";
-// TODO: Remove this line and use your own data model
+import { GameOverview } from "./components/gameOverview";
+import { EGameOverviewType } from "./constants";
+//  TODO: import data from data.ts
 import { historyData, scoreboardData } from "./data";
 
 export const HomeScreen = () => {

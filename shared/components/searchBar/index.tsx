@@ -1,9 +1,9 @@
 import { StyleSheet, TextInput, View } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
-import { useTheme } from "@/shared/contexts/Theme";
+import { useTheme } from "@/shared/contexts/theme";
 
-import { Colors } from "../../constants/Colors";
+import { Colors } from "../../constants/colors";
 
 const SearchBar = () => {
   const theme = useTheme();

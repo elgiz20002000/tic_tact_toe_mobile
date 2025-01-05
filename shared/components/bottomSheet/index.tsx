@@ -3,11 +3,11 @@ import {
   BottomSheetModal,
   BottomSheetView,
 } from "@gorhom/bottom-sheet";
-import { forwardRef, useImperativeHandle, useRef ,useCallback} from "react";
+import { forwardRef, useImperativeHandle, useRef, useCallback } from "react";
 import { StyleSheet } from "react-native";
-import { useFocusEffect } from '@react-navigation/native';
+import { useFocusEffect } from "@react-navigation/native";
 
-import { useTheme } from "../../contexts/Theme";
+import { useTheme } from "../../contexts/theme";
 import { IBottomSheet, IBottomSheetRef } from "./interfaces";
 
 export const BottomSheet = forwardRef<IBottomSheetRef, IBottomSheet>(
@@ -19,7 +19,7 @@ export const BottomSheet = forwardRef<IBottomSheetRef, IBottomSheet>(
       present: () => bottomSheetModalRef.current?.present(),
       close: () => bottomSheetModalRef.current?.close(),
     }));
-    
+
     useFocusEffect(
       useCallback(() => {
         return () => {

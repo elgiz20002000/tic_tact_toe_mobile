@@ -1,4 +1,4 @@
-import { EGameOverviewType, EGameResult } from "./constans";
+import { EGameOverviewType, EGameResult } from "./constants";
 
 export interface IHistoryItem {
   id: string;
