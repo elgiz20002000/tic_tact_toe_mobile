@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { StyleSheet } from "react-native";
 
-import { Text } from "@/shared/components/themed/Text";
-import { View } from "@/shared/components/themed/View";
-import { Colors } from "@/shared/constants/Colors";
-import { useTheme } from "@/shared/contexts/Theme";
+import { Text } from "@/shared/components/themed/text";
+import { View } from "@/shared/components/themed/view";
+import { Colors } from "@/shared/constants/colors";
+import { useTheme } from "@/shared/contexts/theme";
 
-import { EGameOverviewType } from "../constans";
+import { EGameOverviewType } from "../constants";
 import { useGameOverviewList } from "../hooks/useGameOverviewList";
 import { IGameOverview } from "../interfaces";
 

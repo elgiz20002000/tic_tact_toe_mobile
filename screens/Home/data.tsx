@@ -1,4 +1,4 @@
-import { EGameResult } from "./constans";
+import { EGameResult } from "./constants";
 import { IHistoryItem, IScoreboardItem } from "./interfaces";
 
 export const historyData: IHistoryItem[] = [

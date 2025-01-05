@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
-import { Colors } from "@/shared/constants/Colors";
+import { Colors } from "@/shared/constants/colors";
 
-import { Text } from "../themed/Text";
+import { Text } from "../themed/text";
 import { IButton } from "./interfaces";
 
 export const Button: FC<IButton> = ({ text, onPress, rightIcon, leftIcon }) => {

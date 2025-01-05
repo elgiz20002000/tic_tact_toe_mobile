@@ -1,7 +1,7 @@
 import { GameHistoryList } from "@/shared/components/gameHistoryList";
 import ScoreboardList from "@/shared/components/scoreboardList";
 
-import { EGameOverviewType } from "../constans";
+import { EGameOverviewType } from "../constants";
 import { IHistoryItem, IScoreboardItem } from "../interfaces";
 
 export const useGameOverviewList = (
@@ -12,5 +12,4 @@ export const useGameOverviewList = (
     return <ScoreboardList data={data as IScoreboardItem[]} minimized />;
   }
   return <GameHistoryList data={data as IHistoryItem[]} />;
-
 };

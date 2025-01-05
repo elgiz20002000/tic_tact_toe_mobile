@@ -4,10 +4,10 @@ import { useCallback } from "react";
 import { StyleSheet } from "react-native";
 
 import { Button } from "@/shared/components/button";
-import { SafeAreaView } from "@/shared/components/themed/SafeAreaView";
-import { Text } from "@/shared/components/themed/Text";
-import { View } from "@/shared/components/themed/View";
-import { useTheme } from "@/shared/contexts/Theme";
+import { SafeAreaView } from "@/shared/components/themed/safeAreaView";
+import { Text } from "@/shared/components/themed/text";
+import { View } from "@/shared/components/themed/view";
+import { useTheme } from "@/shared/contexts/theme";
 
 const ConnectionError = () => {
   const router = useRouter();

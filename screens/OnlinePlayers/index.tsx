@@ -2,15 +2,15 @@ import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { useRef, useState } from "react";
 import { FlatList, StyleSheet } from "react-native";
 
-import { PlayerInfo } from "@/screens/OnlinePlayers/components/PlayerInfo";
+import { PlayerInfo } from "@/screens/onlinePlayers/components/playerInfo";
 import { BottomSheet } from "@/shared/components/bottomSheet";
 import { IBottomSheetRef } from "@/shared/components/bottomSheet/interfaces";
 import SearchBar from "@/shared/components/searchBar";
-import { Text } from "@/shared/components/themed/Text";
-import { View } from "@/shared/components/themed/View";
-import { Colors } from "@/shared/constants/Colors";
+import { Text } from "@/shared/components/themed/text";
+import { View } from "@/shared/components/themed/view";
+import { Colors } from "@/shared/constants/colors";
 
-import { PlayerCard } from "./components/PlayerCard";
+import { PlayerCard } from "./components/playerCard";
 import { Player } from "./interface";
 import { players } from "./mockData";
 

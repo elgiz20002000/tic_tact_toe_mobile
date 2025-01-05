@@ -1,6 +1,6 @@
 import { SafeAreaView as DefaultSafeAreaView, ViewProps } from "react-native";
 
-import { useTheme } from "@/shared/contexts/Theme";
+import { useTheme } from "@/shared/contexts/theme";
 
 export const SafeAreaView = (props: ViewProps) => {
   const theme = useTheme();
@@ -13,4 +13,3 @@ export const SafeAreaView = (props: ViewProps) => {
     />
   );
 };
-

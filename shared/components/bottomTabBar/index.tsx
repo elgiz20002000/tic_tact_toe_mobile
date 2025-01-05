@@ -2,7 +2,7 @@ import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { useTheme } from "@/shared/contexts/Theme";
+import { useTheme } from "@/shared/contexts/theme";
 
 import TabBarButton from "./button";
 

@@ -4,7 +4,7 @@ import { Image } from "react-native";
 import onboarding_1 from "@/assets/images/onboarding_1.png";
 import onboarding_2 from "@/assets/images/onboarding_2.png";
 import onboarding_3 from "@/assets/images/onboarding_3.png";
-import { useTheme } from "@/shared/contexts/Theme";
+import { useTheme } from "@/shared/contexts/theme";
 
 const imageStyle = { width: 200, height: 200 };
 

@@ -8,12 +8,12 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 
-import { Text } from "@/shared/components/themed/Text";
-import { Spacing } from "@/shared/constants/Colors";
-import { useTheme } from "@/shared/contexts/Theme";
+import { Text } from "@/shared/components/themed/text";
+import { Spacing } from "@/shared/constants/colors";
+import { useTheme } from "@/shared/contexts/theme";
 
 import useOnboardingPages from "../constants";
-import { CustomDot } from "./CustomDot";
+import { CustomDot } from "./customDot";
 
 export const OnboardingSlide = () => {
   const sharedOpacity = useSharedValue(1);

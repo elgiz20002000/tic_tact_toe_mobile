@@ -3,9 +3,9 @@ import { FC } from "react";
 import { FlatList, StyleSheet } from "react-native";
 
 import { IScoreboardItem } from "@/screens/Home/interfaces";
-import { Text } from "@/shared/components/themed/Text";
-import { View } from "@/shared/components/themed/View";
-import { Colors } from "@/shared/constants/Colors";
+import { Text } from "@/shared/components/themed/text";
+import { View } from "@/shared/components/themed/view";
+import { Colors } from "@/shared/constants/colors";
 
 interface IScoreboardList {
   data: IScoreboardItem[];

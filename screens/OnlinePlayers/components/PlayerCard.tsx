@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
-import { Text } from "@/shared/components/themed/Text";
-import { Colors } from "@/shared/constants/Colors";
+import { Text } from "@/shared/components/themed/text";
+import { Colors } from "@/shared/constants/colors";
 
 import { EInviteStatus, EStatus } from "../constants";
 import { IPlayerCard, Player } from "../interface";

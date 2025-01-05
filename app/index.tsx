@@ -1,4 +1,4 @@
-import OnboardingScreen from "@/screens/Root/Onboarding";
+import OnboardingScreen from "@/screens/onboarding";
 
 const OnboardingRoute = () => {
   return <OnboardingScreen />;
