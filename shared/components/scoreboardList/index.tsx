@@ -2,7 +2,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { FC } from "react";
 import { FlatList, StyleSheet } from "react-native";
 
-import { IScoreboardItem } from "@/screens/Home/interfaces";
+import { IScoreboardItem } from "@/screens/home/interfaces";
 import { Text } from "@/shared/components/themed/text";
 import { View } from "@/shared/components/themed/view";
 import { Colors } from "@/shared/constants/colors";
