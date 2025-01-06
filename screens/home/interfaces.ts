@@ -28,4 +28,5 @@ export interface IGameOverview {
   header: string;
   data: IHistoryItem[] | IScoreboardItem[];
   type: EGameOverviewType;
+  onPress: () => void
 }

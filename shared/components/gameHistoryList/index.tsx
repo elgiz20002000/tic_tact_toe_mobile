@@ -6,12 +6,12 @@ import { Text } from "@/shared/components/themed/text";
 import { View } from "@/shared/components/themed/view";
 import { Colors } from "@/shared/constants/colors";
 
-interface IScoreboardList {
+interface IGameHistoryList {
   data: IHistoryItem[];
 }
 
-export const GameHistoryList: FC<IScoreboardList> = ({ data = [] }) => {
-  const renderScoreboardItem = ({ item }: { item: IHistoryItem }) => (
+export const GameHistoryList: FC<IGameHistoryList> = ({ data = [] }) => {
+  const renderGameHistoryItem = ({ item }: { item: IHistoryItem }) => (
     <View style={styles.itemContainer}>
       <View style={styles.nameContainer}>
         <Text style={styles.playerName}>{item.playerName}</Text>
@@ -33,7 +33,7 @@ export const GameHistoryList: FC<IScoreboardList> = ({ data = [] }) => {
       data={data}
       scrollEnabled={false}
       keyExtractor={(item) => item.id}
-      renderItem={renderScoreboardItem}
+      renderItem={renderGameHistoryItem}
     />
   );
 };

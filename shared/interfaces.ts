@@ -22,6 +22,7 @@ export interface IColorsScheme {
   black: string;
   lightGray: string;
   box: IBox;
+  datePickerBackgroundColor: string;
 }
 
 export interface IBottomNavigationTab {
@@ -31,6 +32,7 @@ export interface IBottomNavigationTab {
 }
 export interface IBox {
   background: string;
+  icon: string;
 }
 export interface ISliderColors {
   dotBackground: string;
