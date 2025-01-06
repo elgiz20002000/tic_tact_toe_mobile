@@ -1,6 +1,6 @@
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-import { OnlinePlayersScreen } from "@/screens/OnlinePlayers";
+import { OnlinePlayersScreen } from "@/screens/onlinePlayers";
 
 const OnlinePlayers = () => {
   return (

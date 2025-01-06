@@ -10,7 +10,7 @@ import { Text } from "@/shared/components/themed/text";
 import { View } from "@/shared/components/themed/view";
 import { Colors } from "@/shared/constants/colors";
 
-import AuthLogo from "./components/AuthLogo";
+import AuthLogo from "./components/authLogo";
 
 export const LoginScreen = () => {
   const router = useRouter();

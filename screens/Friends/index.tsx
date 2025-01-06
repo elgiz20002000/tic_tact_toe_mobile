@@ -10,8 +10,8 @@ import { View } from "@/shared/components/themed/view";
 
 import { PlayerCard } from "../onlinePlayers/components/playerCard";
 import { PlayerInfo } from "../onlinePlayers/components/playerInfo";
-import { Player } from "../OnlinePlayers/interface";
-import { players } from "../OnlinePlayers/mockData";
+import { Player } from "../onlinePlayers/interface";
+import { players } from "../onlinePlayers/mockData";
 
 export const FriendsScreen = () => {
   const bottomSheetModalRef = useRef<IBottomSheetRef>(null);

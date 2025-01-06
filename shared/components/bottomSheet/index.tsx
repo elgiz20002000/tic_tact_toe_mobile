@@ -3,9 +3,9 @@ import {
   BottomSheetModal,
   BottomSheetView,
 } from "@gorhom/bottom-sheet";
-import { forwardRef, useImperativeHandle, useRef, useCallback } from "react";
-import { StyleSheet } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
+import { StyleSheet } from "react-native";
 
 import { useTheme } from "../../contexts/theme";
 import { IBottomSheet, IBottomSheetRef } from "./interfaces";

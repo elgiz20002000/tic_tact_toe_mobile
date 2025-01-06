@@ -1,6 +1,6 @@
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-import { FriendsScreen } from "@/screens/Friends";
+import { FriendsScreen } from "@/screens/friends";
 
 const Friends = () => {
   return (
