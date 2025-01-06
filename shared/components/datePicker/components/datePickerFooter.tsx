@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
-import { View } from "@/shared/components/themed/View";
-import { Colors } from "@/shared/constants/Colors";
+import { View } from "@/shared/components/themed/view";
+import { Colors } from "@/shared/constants/colors";
 
-import { Text } from "../../themed/Text";
+import { Text } from "../../themed/text";
 import { IDatePickerState } from "../interfaces";
 
 interface IDatePickerFooter {
@@ -70,4 +70,3 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
-

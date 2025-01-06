@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { Modal, StyleSheet } from "react-native";
 
-import { View } from "@/shared/components/themed/View";
-import { Colors } from "@/shared/constants/Colors";
+import { View } from "@/shared/components/themed/view";
+import { Colors } from "@/shared/constants/colors";
 
 import { IDatePickerState } from "../interfaces";
 import { DatePickerFooter } from "./datePickerFooter";

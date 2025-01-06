@@ -3,10 +3,10 @@ import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import DropDownIcon from "react-native-vector-icons/AntDesign";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-import { Text } from "@/shared/components/themed/Text";
-import { View } from "@/shared/components/themed/View";
-import { Colors } from "@/shared/constants/Colors";
-import { useTheme } from "@/shared/contexts/Theme";
+import { Text } from "@/shared/components/themed/text";
+import { View } from "@/shared/components/themed/view";
+import { Colors } from "@/shared/constants/colors";
+import { useTheme } from "@/shared/contexts/theme";
 
 import { MONTHS } from "../dateConstant";
 import { getYears } from "../helpers";

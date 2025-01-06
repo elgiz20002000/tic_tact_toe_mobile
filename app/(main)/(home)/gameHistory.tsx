@@ -1,4 +1,4 @@
-import GameHistoryScreen from '@/screens/Home/components/GameHistory'
+import GameHistoryScreen from '@/screens/home/components/gameHistory'
 
 const GameHistory = () => {
   return (

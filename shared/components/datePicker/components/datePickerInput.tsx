@@ -2,8 +2,8 @@ import React, { FC } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-import { Text } from "@/shared/components/themed/Text";
-import { Colors } from "@/shared/constants/Colors";
+import { Text } from "@/shared/components/themed/text";
+import { Colors } from "@/shared/constants/colors";
 
 import { IDatePickerState } from "../interfaces";
 
