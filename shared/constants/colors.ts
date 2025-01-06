@@ -26,6 +26,7 @@ export const Colors: {
     backgroundWhite: "#fff",
     black: "#000",
     lightGray: "#F1F1F1",
+    datePickerBackgroundColor: "#00000080",
     bottomNavigationTab: {
       activeColor: "#ffffff",
       inactiveColor: "#2475C5",
@@ -38,6 +39,7 @@ export const Colors: {
     },
     box: {
       background: "#F1F1F1",
+      icon:"#000"
     },
   },
   dark: {
@@ -59,6 +61,7 @@ export const Colors: {
     backgroundWhite: "#9BA1A6",
     black: "#000",
     lightGray: "#9BA1A6",
+    datePickerBackgroundColor: "#12161F",
     bottomNavigationTab: {
       activeColor: "#ADADAD",
       inactiveColor: "#12161F",
@@ -71,6 +74,7 @@ export const Colors: {
     },
     box: {
       background: "#12161F",
+      icon:"#ADADAD"
     },
   },
 };
