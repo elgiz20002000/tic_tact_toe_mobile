@@ -5,12 +5,12 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 
 import { Text } from "@/shared/components/themed/text";
 import { View } from "@/shared/components/themed/view";
-import { Colors } from "@/shared/constants/colors";
+import { Colors } from "@/shared/constants/Colors";
 import { useTheme } from "@/shared/contexts/theme";
 
-import { MONTHS } from "../dateConstant";
-import { getYears } from "../helpers";
-import { IDatePickerState } from "../interfaces";
+import { MONTHS } from "../../constant";
+import { getYears } from "../../helpers";
+import { IDatePickerState } from "../../interfaces";
 
 interface IDatePickerHeader {
   state: IDatePickerState;

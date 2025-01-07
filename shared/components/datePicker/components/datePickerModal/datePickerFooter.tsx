@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
+import { Text } from "@/shared/components/themed/text";
 import { View } from "@/shared/components/themed/view";
-import { Colors } from "@/shared/constants/colors";
+import { Colors } from "@/shared/constants/Colors";
 
-import { Text } from "../../themed/text";
-import { IDatePickerState } from "../interfaces";
+import { IDatePickerState } from "../../interfaces";
 
 interface IDatePickerFooter {
   setState: React.Dispatch<React.SetStateAction<IDatePickerState>>;

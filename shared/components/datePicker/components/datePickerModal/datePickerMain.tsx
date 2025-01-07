@@ -3,11 +3,11 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 
 import { Text } from "@/shared/components/themed/text";
 import { View } from "@/shared/components/themed/view";
-import { Colors } from "@/shared/constants/colors";
+import { Colors } from "@/shared/constants/Colors";
 
-import { WEEKDAYS } from "../dateConstant";
-import { getDays } from "../helpers";
-import { IDatePickerState } from "../interfaces";
+import { WEEKDAYS } from "../../constant";
+import { getDays } from "../../helpers";
+import { IDatePickerState } from "../../interfaces";
 
 interface IDatePickerMain {
   state: IDatePickerState;

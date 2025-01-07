@@ -61,7 +61,7 @@ export const Colors: {
     backgroundWhite: "#9BA1A6",
     black: "#000",
     lightGray: "#9BA1A6",
-    datePickerBackgroundColor: "#12161F",
+    pickerBackgroundColor: "#12161F",
     bottomNavigationTab: {
       activeColor: "#ADADAD",
       inactiveColor: "#12161F",
