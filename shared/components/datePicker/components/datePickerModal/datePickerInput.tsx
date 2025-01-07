@@ -5,7 +5,7 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import { Text } from "@/shared/components/themed/text";
 import { Colors } from "@/shared/constants/colors";
 
-import { IDatePickerState } from "../interfaces";
+import { IDatePickerState } from "../../interfaces";
 
 interface IDatePickerInput {
   setState: (value: React.SetStateAction<IDatePickerState>) => void;

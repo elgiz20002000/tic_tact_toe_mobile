@@ -5,9 +5,9 @@ import { Text } from "@/shared/components/themed/text";
 import { View } from "@/shared/components/themed/view";
 import { Colors } from "@/shared/constants/colors";
 
-import { WEEKDAYS } from "../dateConstant";
-import { getDays } from "../helpers";
-import { IDatePickerState } from "../interfaces";
+import { WEEKDAYS } from "../../constants";
+import { getDays } from "../../helpers";
+import { IDatePickerState } from "../../interfaces";
 
 interface IDatePickerMain {
   state: IDatePickerState;
