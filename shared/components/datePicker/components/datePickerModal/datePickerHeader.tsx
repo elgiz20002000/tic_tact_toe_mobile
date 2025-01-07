@@ -8,10 +8,9 @@ import { View } from "@/shared/components/themed/view";
 import { Colors } from "@/shared/constants/colors";
 import { useTheme } from "@/shared/contexts/theme";
 
-import { MONTHS } from "../dateConstant";
-import { getYears } from "../helpers";
-import { IDatePickerState } from "../interfaces";
-
+import { MONTHS } from "../../constants";
+import { getYears } from "../../helpers";
+import { IDatePickerState } from "../../interfaces";
 interface IDatePickerHeader {
   state: IDatePickerState;
   setState: React.Dispatch<React.SetStateAction<IDatePickerState>>;

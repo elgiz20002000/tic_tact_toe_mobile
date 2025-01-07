@@ -4,7 +4,7 @@ import { Modal, StyleSheet } from "react-native";
 import { View } from "@/shared/components/themed/view";
 import { Colors } from "@/shared/constants/colors";
 
-import { IDatePickerState } from "../interfaces";
+import { IDatePickerState } from "../../interfaces";
 import { DatePickerFooter } from "./datePickerFooter";
 import { DatePickerHeader } from "./datePickerHeader";
 import { DatePickerMain } from "./datePickerMain";
