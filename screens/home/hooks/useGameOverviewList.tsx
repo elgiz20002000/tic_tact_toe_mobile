@@ -1,5 +1,5 @@
-import { GameHistoryList } from "@/shared/components/gameHistoryList";
-import ScoreboardList from "@/shared/components/scoreboardList";
+import { GameHistoryList } from "@/shared/ui/gameHistoryList";
+import ScoreboardList from "@/shared/ui/scoreboardList";
 
 import { EGameOverviewType } from "../constants";
 import { IHistoryItem, IScoreboardItem } from "../interfaces";

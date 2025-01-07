@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
 
-import { DatePicker } from "@/shared/components/datePicker";
-import { GameHistoryList } from "@/shared/components/gameHistoryList";
-import { View } from "@/shared/components/themed/view";
+import { DatePicker } from "@/shared/ui/datePicker";
+import { GameHistoryList } from "@/shared/ui/gameHistoryList";
+import { View } from "@/shared/ui/themed/view";
 
 import { historyData } from "../../data";
 

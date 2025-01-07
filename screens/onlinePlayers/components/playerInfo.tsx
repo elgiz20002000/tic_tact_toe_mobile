@@ -5,8 +5,8 @@ import { StyleSheet } from "react-native";
 import { StatisticsCard } from "@/screens/home/components/statisticCard";
 import { EStatus } from "@/screens/onlinePlayers/constants";
 import { IPlayerInfo } from "@/screens/onlinePlayers/interface";
-import { CompareModal } from "@/shared/components/compareModal";
-import { Text } from "@/shared/components/themed/text";
+import { CompareModal } from "@/shared/ui/compareModal";
+import { Text } from "@/shared/ui/themed/text";
 import { Colors } from "@/shared/constants/colors";
 
 export const PlayerInfo: React.FC<IPlayerInfo> = ({

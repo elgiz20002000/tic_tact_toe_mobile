@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { SafeAreaView } from "react-native";
 
+import { DatePickerInput } from "./components/datePickerInput";
 import { DatePickerModal } from "./components/datePickerModal";
-import { DatePickerInput } from "./components/datePickerModal/datePickerInput";
 import { IDatePickerState } from "./interfaces";
 
 export const DatePicker = () => {

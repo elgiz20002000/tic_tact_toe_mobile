@@ -3,11 +3,11 @@ import { useRef, useState } from "react";
 import { FlatList, StyleSheet } from "react-native";
 
 import { PlayerInfo } from "@/screens/onlinePlayers/components/playerInfo";
-import { BottomSheet } from "@/shared/components/bottomSheet";
-import { IBottomSheetRef } from "@/shared/components/bottomSheet/interfaces";
-import SearchBar from "@/shared/components/searchBar";
-import { Text } from "@/shared/components/themed/text";
-import { View } from "@/shared/components/themed/view";
+import { BottomSheet } from "@/shared/ui/bottomSheet";
+import { IBottomSheetRef } from "@/shared/ui/bottomSheet/interfaces";
+import SearchBar from "@/shared/ui/searchBar";
+import { Text } from "@/shared/ui/themed/text";
+import { View } from "@/shared/ui/themed/view";
 import { Colors } from "@/shared/constants/colors";
 
 import { PlayerCard } from "./components/playerCard";

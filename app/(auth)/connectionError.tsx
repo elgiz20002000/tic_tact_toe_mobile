@@ -3,10 +3,10 @@ import { useRouter } from "expo-router";
 import { useCallback } from "react";
 import { StyleSheet } from "react-native";
 
-import { Button } from "@/shared/components/button";
-import { SafeAreaView } from "@/shared/components/themed/safeAreaView";
-import { Text } from "@/shared/components/themed/text";
-import { View } from "@/shared/components/themed/view";
+import { Button } from "@/shared/ui/button";
+import { SafeAreaView } from "@/shared/ui/themed/safeAreaView";
+import { Text } from "@/shared/ui/themed/text";
+import { View } from "@/shared/ui/themed/view";
 import { useTheme } from "@/shared/contexts/theme";
 
 const ConnectionError = () => {

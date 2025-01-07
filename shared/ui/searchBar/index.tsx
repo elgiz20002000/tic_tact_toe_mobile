@@ -29,11 +29,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 8,
-    paddingHorizontal: 10,
-    elevation: 2,
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 5,
+    paddingHorizontal: 15,
     borderWidth: 1,
     marginBottom: 20,
     borderColor: Colors.light.textGray,
@@ -43,8 +39,8 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    height: 50,
     fontSize: 16,
+    paddingVertical:10
   },
 });
 
