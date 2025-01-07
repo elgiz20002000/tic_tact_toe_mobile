@@ -1,9 +1,12 @@
 import React from "react";
-import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Modal, StyleSheet, TouchableOpacity } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 import { Colors } from "@/shared/constants/colors";
 import { ICompareModal } from "@/shared/interfaces";
+
+import { Text } from "../themed/text";
+import { View } from "../themed/view";
 
 export const CompareModal: React.FC<ICompareModal> = ({
   modalVisible,
@@ -12,7 +15,7 @@ export const CompareModal: React.FC<ICompareModal> = ({
 }) => {
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={styles.centeredView}>
+      <SafeAreaView style={styles.centeredModalView}>
         <Modal
           animationType="fade"
           transparent
@@ -54,6 +57,10 @@ export const CompareModal: React.FC<ICompareModal> = ({
 };
 
 const styles = StyleSheet.create({
+  centeredModalView:{
+    backgroundColor: Colors.light.box.background,
+
+  },
   centeredView: {
     flex: 1,
     justifyContent: "center",
@@ -62,7 +69,6 @@ const styles = StyleSheet.create({
   modalView: {
     width: "80%",
     margin: 20,
-    backgroundColor: Colors.light.backgroundWhite,
     borderRadius: 20,
     paddingHorizontal: 15,
     paddingVertical: 25,
