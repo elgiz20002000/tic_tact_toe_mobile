@@ -8,7 +8,7 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 
-import { Text } from "@/shared/components/themed/text";
+import { Text } from "@/shared/ui/themed/text";
 import { Spacing } from "@/shared/constants/colors";
 import { useTheme } from "@/shared/contexts/theme";
 

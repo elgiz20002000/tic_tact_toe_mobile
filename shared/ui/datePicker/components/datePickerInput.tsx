@@ -2,10 +2,10 @@ import React, { FC } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-import { Text } from "@/shared/components/themed/text";
+import { Text } from "@/shared/ui/themed/text";
 import { Colors } from "@/shared/constants/colors";
 
-import { IDatePickerState } from "../../interfaces";
+import { IDatePickerState } from "../interfaces";
 
 interface IDatePickerInput {
   setState: (value: React.SetStateAction<IDatePickerState>) => void;

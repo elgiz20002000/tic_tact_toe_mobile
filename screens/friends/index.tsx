@@ -2,11 +2,11 @@ import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { useRef, useState } from "react";
 import { FlatList, StyleSheet } from "react-native";
 
-import { BottomSheet } from "@/shared/components/bottomSheet";
-import { IBottomSheetRef } from "@/shared/components/bottomSheet/interfaces";
-import SearchBar from "@/shared/components/searchBar";
-import { Text } from "@/shared/components/themed/text";
-import { View } from "@/shared/components/themed/view";
+import { BottomSheet } from "@/shared/ui/bottomSheet";
+import { IBottomSheetRef } from "@/shared/ui/bottomSheet/interfaces";
+import SearchBar from "@/shared/ui/searchBar";
+import { Text } from "@/shared/ui/themed/text";
+import { View } from "@/shared/ui/themed/view";
 
 import { PlayerCard } from "../onlinePlayers/components/playerCard";
 import { PlayerInfo } from "../onlinePlayers/components/playerInfo";

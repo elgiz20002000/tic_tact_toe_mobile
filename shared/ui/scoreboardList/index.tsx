@@ -3,8 +3,8 @@ import { FC } from "react";
 import { FlatList, StyleSheet } from "react-native";
 
 import { IScoreboardItem } from "@/screens/home/interfaces";
-import { Text } from "@/shared/components/themed/text";
-import { View } from "@/shared/components/themed/view";
+import { Text } from "@/shared/ui/themed/text";
+import { View } from "@/shared/ui/themed/view";
 import { Colors } from "@/shared/constants/colors";
 
 interface IScoreboardList {

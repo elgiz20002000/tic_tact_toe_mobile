@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
 
-import ScoreboardList from "@/shared/components/scoreboardList";
-import SearchBar from "@/shared/components/searchBar";
-import { View } from "@/shared/components/themed/view";
+import ScoreboardList from "@/shared/ui/scoreboardList";
+import SearchBar from "@/shared/ui/searchBar";
+import { View } from "@/shared/ui/themed/view";
 
 // TODO: Remove this line and use your own data model
 import { scoreboardData } from "../../data";

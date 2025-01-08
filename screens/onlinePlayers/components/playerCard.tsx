@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
-import { Text } from "@/shared/components/themed/text";
+import { Text } from "@/shared/ui/themed/text";
 import { Colors } from "@/shared/constants/colors";
 
 import { EInviteStatus, EStatus } from "../constants";

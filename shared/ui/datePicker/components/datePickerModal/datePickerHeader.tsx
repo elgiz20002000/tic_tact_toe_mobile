@@ -3,8 +3,8 @@ import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import DropDownIcon from "react-native-vector-icons/AntDesign";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-import { Text } from "@/shared/components/themed/text";
-import { View } from "@/shared/components/themed/view";
+import { Text } from "@/shared/ui/themed/text";
+import { View } from "@/shared/ui/themed/view";
 import { Colors } from "@/shared/constants/colors";
 import { useTheme } from "@/shared/contexts/theme";
 
@@ -126,7 +126,7 @@ export const DatePickerHeader: FC<IDatePickerHeader> = ({
 const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
     marginBottom: 20,
     paddingVertical: 20,
@@ -140,12 +140,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginHorizontal: 10,
     borderColor: Colors.light.textGray,
-    borderWidth: 0.2,
+    borderWidth: 0.3,
     paddingVertical: 8,
     justifyContent: "space-between",
     position: "relative",
     zIndex: 1,
     width: 140,
+    paddingHorizontal: 1,
   },
   dropdownTextMonth: {
     fontSize: 16,
@@ -160,11 +161,11 @@ const styles = StyleSheet.create({
   },
   pickerDropdownMonth: {
     position: "absolute",
-    top: 40,
+    top: 50,
     left: 0,
     zIndex: 10,
     borderColor: Colors.light.textGray,
-    borderWidth: 0.2,
+    borderWidth: 0.3,
     width: "100%",
     maxHeight: 200,
   },
@@ -174,7 +175,7 @@ const styles = StyleSheet.create({
   dropdownYearContainer: {
     marginHorizontal: 10,
     borderColor: Colors.light.textGray,
-    borderWidth: 0.2,
+    borderWidth: 0.3,
     paddingVertical: 8,
     justifyContent: "space-between",
     position: "relative",
@@ -195,10 +196,10 @@ const styles = StyleSheet.create({
   },
   pickerDropdownYear: {
     position: "absolute",
-    top: 40,
+    top: 50,
     left: 0,
     borderColor: Colors.light.textGray,
-    borderWidth: 0.2,
+    borderWidth: 0.3,
     width: "100%",
     maxHeight: 200,
   },

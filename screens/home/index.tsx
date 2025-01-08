@@ -2,18 +2,27 @@ import { useRouter } from "expo-router";
 import { StyleSheet } from "react-native";
 
 import { StatisticsCard } from "@/screens/home/components/statisticCard";
-import { SafeAreaView } from "@/shared/components/themed/safeAreaView";
-import { Text } from "@/shared/components/themed/text";
-import { View } from "@/shared/components/themed/view";
+import { SafeAreaView } from "@/shared/ui/themed/safeAreaView";
+import { Text } from "@/shared/ui/themed/text";
+import { View } from "@/shared/ui/themed/view";
 
+import { useScreenSize } from "../../shared/hooks/useScreenSize";
 import { GameOverview } from "./components/gameOverview";
 import { EGameOverviewType } from "./constants";
 //  TODO: import data from data.ts
 import { historyData, scoreboardData } from "./data";
+import { getDataByScreenSize } from "./helpers/getDataByScreenSize";
 
 export const HomeScreen = () => {
   const router = useRouter();
-  const limitedScoreboardData = scoreboardData.slice(0, 5);
+  const { isSmallScreen } = useScreenSize();
+
+  const limitedScoreboardData = getDataByScreenSize(
+    scoreboardData,
+    isSmallScreen
+  );
+
+  const limitedHistoryData = getDataByScreenSize(historyData, isSmallScreen);
 
   const handlePressScoreboardBox = () => {
     router.push("/(main)/(home)/scoreboard");
@@ -21,6 +30,7 @@ export const HomeScreen = () => {
   const handlePressGameHistoryBox = () => {
     router.push("/(main)/(home)/gameHistory");
   };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userAbout}>
@@ -34,7 +44,7 @@ export const HomeScreen = () => {
         <GameOverview
           onPress={handlePressGameHistoryBox}
           header="Game History"
-          data={historyData}
+          data={limitedHistoryData}
           type={EGameOverviewType.History}
         />
         <GameOverview

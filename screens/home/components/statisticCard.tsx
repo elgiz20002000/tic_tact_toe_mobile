@@ -2,8 +2,8 @@ import { FC } from "react";
 import { StyleSheet } from "react-native";
 
 import { IStatisticsCard } from "@/screens/home/interfaces";
-import { Text } from "@/shared/components/themed/text";
-import { View } from "@/shared/components/themed/view";
+import { Text } from "@/shared/ui/themed/text";
+import { View } from "@/shared/ui/themed/view";
 import { Colors } from "@/shared/constants/colors";
 
 export const StatisticsCard: FC<IStatisticsCard> = ({

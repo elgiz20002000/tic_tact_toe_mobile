@@ -1,7 +1,8 @@
 import { Tabs, useSegments } from "expo-router";
 import { useEffect, useState } from "react";
 
-import BottomTabBar from "@/shared/components/bottomTabBar";
+import { pathsToNotShowBottomBar } from "@/shared/constants/router";
+import BottomTabBar from "@/shared/ui/bottomTabBar";
 
 export default function RootLayout() {
   const segments = useSegments();
@@ -9,7 +10,7 @@ export default function RootLayout() {
 
   useEffect(() => {
     const currentPath = segments.join("/");
-    setShowTabBar(currentPath !== "(main)/(home)/scoreboard");
+    setShowTabBar(!pathsToNotShowBottomBar.includes(currentPath));
   }, [segments]);
 
   return (

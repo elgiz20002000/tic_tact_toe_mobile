@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
-import { Text } from "@/shared/components/themed/text";
-import { View } from "@/shared/components/themed/view";
 import { Colors } from "@/shared/constants/colors";
+import { Text } from "@/shared/ui/themed/text";
+import { View } from "@/shared/ui/themed/view";
 
 import { IDatePickerState } from "../../interfaces";
 
@@ -13,13 +13,13 @@ interface IDatePickerFooter {
 
 export const DatePickerFooter: FC<IDatePickerFooter> = ({ setState }) => {
   const handleReset = (): void => {
-    setState({
-      showModal: false,
-      selectedDate: null,
+    setState((prevState) => ({
+      showModal: prevState.showModal,
+      selectedDate: new Date(),
       currentDate: new Date(),
       showMonthPicker: false,
       showYearPicker: false,
-    });
+    }));
   };
 
   const handleDone = (): void => {

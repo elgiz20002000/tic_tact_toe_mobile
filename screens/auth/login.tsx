@@ -4,10 +4,10 @@ import { Image, StyleSheet } from "react-native";
 
 import FaceBookIcon from "@/assets/images/facebook.png";
 import GoogleIcon from "@/assets/images/google.png";
-import { Button } from "@/shared/components/button";
-import { SafeAreaView } from "@/shared/components/themed/safeAreaView";
-import { Text } from "@/shared/components/themed/text";
-import { View } from "@/shared/components/themed/view";
+import { Button } from "@/shared/ui/button";
+import { SafeAreaView } from "@/shared/ui/themed/safeAreaView";
+import { Text } from "@/shared/ui/themed/text";
+import { View } from "@/shared/ui/themed/view";
 import { Colors } from "@/shared/constants/colors";
 
 import AuthLogo from "./components/authLogo";
