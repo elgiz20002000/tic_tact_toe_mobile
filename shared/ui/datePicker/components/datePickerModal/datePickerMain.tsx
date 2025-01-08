@@ -34,7 +34,7 @@ export const DatePickerMain: FC<IDatePickerMain> = ({ setState, state }) => {
   };
 
   return (
-    <View style={{ paddingHorizontal: isSmallScreen ? 5 : 20 }}>
+    <View style={{ paddingHorizontal: isSmallScreen ? 5 : 40 }}>
       <View style={styles.weekdaysRow}>
         {WEEKDAYS.map((day, index) => (
           <Text key={index} style={styles.weekday}>
@@ -75,8 +75,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: Colors.light.textGray,
     fontSize: 12,
+
   },
   daysGrid: {
+    paddingVertical:20,
     flexDirection: "row",
     alignItems: "center",
     flexWrap: "wrap",

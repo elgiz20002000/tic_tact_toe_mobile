@@ -1,4 +1,5 @@
-import { SafeAreaView as DefaultSafeAreaView, ViewProps } from "react-native";
+import { ViewProps } from "react-native";
+import { SafeAreaView as DefaultSafeAreaView } from "react-native-safe-area-context";
 
 import { useTheme } from "@/shared/contexts/theme";
 

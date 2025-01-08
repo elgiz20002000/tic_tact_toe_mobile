@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/MaterialIcons";
+import Icon from "react-native-vector-icons/AntDesign";
 
-import { Text } from "@/shared/ui/themed/text";
 import { Colors } from "@/shared/constants/colors";
+import { Text } from "@/shared/ui/themed/text";
 
 import { IDatePickerState } from "../interfaces";
 
@@ -23,7 +23,7 @@ export const DatePickerInput: FC<IDatePickerInput> = ({
         setState((prevState) => ({ ...prevState, showModal: true }))
       }
     >
-      <Icon name="calendar-today" size={20} color={Colors.light.textGray} />
+      <Icon name="calendar" size={20} color={Colors.light.textGray} />
       <Text style={styles.dateText}>
         {selectedDate
           ? selectedDate.toLocaleDateString("en-US")
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   dateText: {
-    fontSize: 16,
+    fontSize: 13,
     color: Colors.light.textGray,
     marginLeft: 10,
   },

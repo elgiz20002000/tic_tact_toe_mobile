@@ -5,8 +5,8 @@ import { FlatList, StyleSheet } from "react-native";
 import { BottomSheet } from "@/shared/ui/bottomSheet";
 import { IBottomSheetRef } from "@/shared/ui/bottomSheet/interfaces";
 import SearchBar from "@/shared/ui/searchBar";
+import { SafeAreaView } from "@/shared/ui/themed/safeAreaView";
 import { Text } from "@/shared/ui/themed/text";
-import { View } from "@/shared/ui/themed/view";
 
 import { PlayerCard } from "../onlinePlayers/components/playerCard";
 import { PlayerInfo } from "../onlinePlayers/components/playerInfo";
@@ -16,7 +16,6 @@ import { players } from "../onlinePlayers/mockData";
 export const FriendsScreen = () => {
   const bottomSheetModalRef = useRef<IBottomSheetRef>(null);
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
-
   const handlePresentPress = (player: Player): void => {
     setSelectedPlayer(player);
     bottomSheetModalRef.current?.present();
@@ -39,7 +38,7 @@ export const FriendsScreen = () => {
 
   return (
     <BottomSheetModalProvider>
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Text style={styles.headerText}>Friends</Text>
         <SearchBar />
         <FlatList
@@ -47,7 +46,7 @@ export const FriendsScreen = () => {
           renderItem={renderFriendItem}
           keyExtractor={(item, index) => index.toString()}
         />
-      </View>
+      </SafeAreaView>
       <BottomSheet ref={bottomSheetModalRef}>
         {selectedPlayer && (
           <PlayerInfo
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
-    paddingTop: 80,
+    paddingTop: 20,
   },
   headerText: {
     fontSize: 24,

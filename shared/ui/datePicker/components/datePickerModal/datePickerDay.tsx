@@ -1,7 +1,8 @@
 import { FC } from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 
 import { Colors } from "@/shared/constants/colors";
+import { Text } from "@/shared/ui/themed/text";
 
 interface IDatePickerDay {
   day: number | null;
@@ -9,7 +10,11 @@ interface IDatePickerDay {
   handleDaySelect: (day: number) => void;
 }
 
-export const DatePickerDay: FC<IDatePickerDay> = ({ day, handleDaySelect, isSelected }) => {
+export const DatePickerDay: FC<IDatePickerDay> = ({
+  day,
+  handleDaySelect,
+  isSelected,
+}) => {
   return (
     <TouchableOpacity
       style={[styles.day, isSelected ? styles.selectedDay : null]}
@@ -40,6 +45,7 @@ const styles = StyleSheet.create({
   },
   dayText: {
     fontSize: 14,
+    fontWeight:'600',
   },
   selectedDayText: {
     color: Colors.light.white,
