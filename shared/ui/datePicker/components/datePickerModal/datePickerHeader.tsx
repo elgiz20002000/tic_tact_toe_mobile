@@ -3,10 +3,10 @@ import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import DropDownIcon from "react-native-vector-icons/AntDesign";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-import { Text } from "@/shared/ui/themed/text";
-import { View } from "@/shared/ui/themed/view";
 import { Colors } from "@/shared/constants/colors";
 import { useTheme } from "@/shared/contexts/theme";
+import { Text } from "@/shared/ui/themed/text";
+import { View } from "@/shared/ui/themed/view";
 
 import { MONTHS } from "../../constants";
 import { getYears } from "../../helpers";
@@ -35,7 +35,7 @@ export const DatePickerHeader: FC<IDatePickerHeader> = ({
   return (
     <View style={styles.header}>
       <TouchableOpacity onPress={() => handleMonthChange(-1)}>
-        <Icon name="arrow-back" size={18} color={theme.box.icon} />
+        <Icon name="arrow-back"  size={18} color={theme.box.icon}/>
       </TouchableOpacity>
       <View style={styles.dropdownContainer}>
         <TouchableOpacity
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: 30,
     paddingVertical: 20,
   },
   dropdownContainer: {
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
   },
   dropdownTextMonth: {
     fontSize: 16,
-    marginRight: 20,
+    fontWeight:'600',
   },
   paceholderMonth: {
     flexDirection: "row",
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
   },
   dropdownTextYear: {
     fontSize: 16,
-    marginRight: 20,
+    fontWeight:'600',
   },
   pickerDropdownYear: {
     position: "absolute",
