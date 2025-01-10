@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, StyleSheet, TouchableOpacity } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { Colors } from "@/shared/constants/colors";
 import { ICompareModal } from "@/shared/interfaces";
@@ -11,82 +11,75 @@ import { View } from "../themed/view";
 export const CompareModal: React.FC<ICompareModal> = ({
   modalVisible,
   setModalVisible,
-  name,
+  title,
+  message,
+  confirmText = "Yes",
+  cancelText = "Cancel",
+  onConfirm,
 }) => {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.centeredModalView}>
-        <Modal
-          animationType="fade"
-          transparent
-          visible={modalVisible}
-          onRequestClose={() => {
-            setModalVisible(!modalVisible);
-          }}
+    <Modal
+      animationType="fade"
+      transparent
+      visible={modalVisible}
+      onRequestClose={() => setModalVisible(false)}
+    >
+      <SafeAreaProvider>
+        <TouchableOpacity
+          style={styles.centeredView}
+          activeOpacity={1}
+          onPressOut={() => setModalVisible(false)}
         >
-          <TouchableOpacity
-            style={styles.centeredView}
-            activeOpacity={1}
-            onPressOut={() => setModalVisible(false)}
-          >
-            <View style={styles.modalView}>
-              <View>
-                <Text style={styles.title}>Remove a Friend?</Text>
-                <Text style={styles.questionText}>
-                  Are you sure you want to remove "{name}" from your friends
-                  list?
-                </Text>
-              </View>
-              <View style={styles.buttonView}>
-                <TouchableOpacity onPress={() => setModalVisible(false)}>
-                  <Text style={styles.textStyle}>Remove</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={{ marginLeft: 20 }}
-                  onPress={() => setModalVisible(false)}
-                >
-                  <Text style={styles.textStyle}>Cancel</Text>
-                </TouchableOpacity>
-              </View>
+          <View style={styles.modalView}>
+            <View style={styles.titleView}>
+              <Text style={styles.title}>{title}</Text>
+              <Text style={styles.message}>{message}</Text>
             </View>
-          </TouchableOpacity>
-        </Modal>
-      </SafeAreaView>
-    </SafeAreaProvider>
+            <View style={styles.buttonView}>
+              <TouchableOpacity onPress={onConfirm}>
+                <Text style={styles.textStyle}>{confirmText}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{ marginLeft: 20 }}
+                onPress={() => setModalVisible(false)}
+              >
+                <Text style={styles.textStyle}>{cancelText}</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </TouchableOpacity>
+      </SafeAreaProvider>
+    </Modal>
   );
 };
 
 const styles = StyleSheet.create({
-  centeredModalView:{
-    backgroundColor: Colors.light.box.background,
-
-  },
   centeredView: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: Colors.light.box.grayBackground, 
   },
   modalView: {
     width: "80%",
-    margin: 20,
     borderRadius: 20,
-    paddingHorizontal: 15,
-    paddingVertical: 25,
-    alignItems: "center",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
+    padding: 30,
+    shadowColor: Colors.light.black,
+    shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
+  },
+  titleView:{
+     alignItems:'flex-start'
   },
   title: {
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 15,
+    textAlign: "center",
   },
-  questionText: {
+  message: {
     fontSize: 16,
     marginBottom: 20,
   },

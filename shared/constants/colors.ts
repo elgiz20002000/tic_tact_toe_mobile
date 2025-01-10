@@ -39,7 +39,10 @@ export const Colors: {
     },
     box: {
       background: "#F1F1F1",
-      icon:"#000"
+      icon:"#000",
+      blurBackgroundX: "rgba(182, 215, 253, 0.5)",
+      blurBackgroundO: "rgba(249, 203, 203, 0.5)",
+      grayBackground: "rgba(0, 0, 0, 0.5)"
     },
   },
   dark: {
@@ -74,7 +77,11 @@ export const Colors: {
     },
     box: {
       background: "#12161F",
-      icon:"#ADADAD"
+      icon:"#ADADAD",
+      blurBackgroundX: "rgba(3, 51, 105, 0.5)",
+      blurBackgroundO: "rgba(70, 5, 5, 0.5)",
+      grayBackground: "rgba(0, 0, 0, 0.5)"
+
     },
   },
 };

@@ -33,6 +33,10 @@ export interface IBottomNavigationTab {
 export interface IBox {
   background: string;
   icon: string;
+  blurBackgroundX: string
+  blurBackgroundO: string,
+  grayBackground: string
+
 }
 export interface ISliderColors {
   dotBackground: string;
@@ -43,7 +47,12 @@ export interface ISliderColors {
 export interface ICompareModal {
   modalVisible: boolean;
   setModalVisible: (visible: boolean) => void;
-  name: string;
+  title: string;
+  message: string;
+  confirmText?: string;
+  cancelText?: string;
+  onConfirm: () => void;
 }
+
 
 export type IRoute = Record<string, Href>;

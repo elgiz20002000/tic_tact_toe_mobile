@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
-import { Text } from "@/shared/ui/themed/text";
 import { Colors } from "@/shared/constants/colors";
+import { Text } from "@/shared/ui/themed/text";
 
 import { EInviteStatus, EStatus } from "../constants";
 import { IPlayerCard, Player } from "../interface";
@@ -27,7 +27,11 @@ export const PlayerCard: React.FC<IPlayerCard> = ({
     }
   };
   return (
-    <View style={styles.playerInfo} key={index}>
+    <TouchableOpacity
+      style={styles.playerInfo}
+      key={index}
+      onPress={() => handlePresentPress(player)}
+    >
       <View>
         <Text>{player.name}</Text>
         <View style={styles.statusContainer}>
@@ -43,10 +47,7 @@ export const PlayerCard: React.FC<IPlayerCard> = ({
         </View>
       </View>
       <View>
-        <TouchableOpacity
-          style={[styles.playerSatusButton, getInviteStatusStyle(player)]}
-          onPress={() => handlePresentPress(player)}
-        >
+        <View style={[styles.playerSatusButton, getInviteStatusStyle(player)]}>
           <Text
             style={
               player.inviteStatus === EInviteStatus.Invited
@@ -56,9 +57,9 @@ export const PlayerCard: React.FC<IPlayerCard> = ({
           >
             {player.inviteStatus}
           </Text>
-        </TouchableOpacity>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -30,7 +30,7 @@ export const BottomSheet = forwardRef<IBottomSheetRef, IBottomSheet>(
     return (
       <BottomSheetModal
         ref={bottomSheetModalRef}
-        snapPoints={[230]}
+        snapPoints={[300]}
         enableOverDrag={false}
         backgroundStyle={styles.background}
         backdropComponent={(props) => (
