@@ -1,7 +1,7 @@
 import OnboardingScreen from "@/screens/onboarding";
 
-const OnboardingRoute = () => {
+const Onboarding = () => {
   return <OnboardingScreen />;
 };
 
-export default OnboardingRoute;
+export default Onboarding;

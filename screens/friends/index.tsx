@@ -16,6 +16,7 @@ import { players } from "../onlinePlayers/mockData";
 export const FriendsScreen = () => {
   const bottomSheetModalRef = useRef<IBottomSheetRef>(null);
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
+  
   const handlePresentPress = (player: Player): void => {
     setSelectedPlayer(player);
     bottomSheetModalRef.current?.present();

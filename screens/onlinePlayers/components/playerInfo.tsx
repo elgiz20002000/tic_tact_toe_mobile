@@ -1,3 +1,4 @@
+import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { StyleSheet } from "react-native";
@@ -5,9 +6,10 @@ import { StyleSheet } from "react-native";
 import { StatisticsCard } from "@/screens/home/components/statisticCard";
 import { EStatus } from "@/screens/onlinePlayers/constants";
 import { IPlayerInfo } from "@/screens/onlinePlayers/interface";
-import { CompareModal } from "@/shared/ui/compareModal";
-import { Text } from "@/shared/ui/themed/text";
 import { Colors } from "@/shared/constants/colors";
+import { CompareModal } from "@/shared/ui/compareModal";
+import { CompareModalMessages } from "@/shared/ui/compareModal/constants";
+import { Text } from "@/shared/ui/themed/text";
 
 export const PlayerInfo: React.FC<IPlayerInfo> = ({
   name,
@@ -15,7 +17,13 @@ export const PlayerInfo: React.FC<IPlayerInfo> = ({
   isFriend = false,
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const router = useRouter();
 
+  const handlePress = () => {
+    router.replace("/game");
+  };
+
+  
   return (
     <View style={styles.playerInfoContainer}>
       <View style={styles.playerNameContainer}>
@@ -39,10 +47,19 @@ export const PlayerInfo: React.FC<IPlayerInfo> = ({
           {isFriend ? "Remove a Friend" : "Add a Friend"}
         </Text>
       </TouchableOpacity>
+      <TouchableOpacity style={[styles.button]} onPress={() => handlePress()}>
+        <Text style={styles.buttonText}>Go to game</Text>
+      </TouchableOpacity>
       <CompareModal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
-        name={name}
+        title={CompareModalMessages.RemoveFriend(name).title}
+        message={CompareModalMessages.RemoveFriend(name).message}
+        confirmText={CompareModalMessages.RemoveFriend(name).confirmText}
+        cancelText={CompareModalMessages.RemoveFriend(name).cancelText}
+        onConfirm={() => {
+          setModalVisible(false);
+        }}
       />
     </View>
   );

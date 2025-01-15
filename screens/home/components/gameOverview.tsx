@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
-import { Text } from "@/shared/ui/themed/text";
-import { View } from "@/shared/ui/themed/view";
 import { Colors } from "@/shared/constants/colors";
 import { useTheme } from "@/shared/contexts/theme";
+import { Text } from "@/shared/ui/themed/text";
+import { View } from "@/shared/ui/themed/view";
 
 import { EGameOverviewType } from "../constants";
 import { useGameOverviewList } from "../hooks/useGameOverviewList";
